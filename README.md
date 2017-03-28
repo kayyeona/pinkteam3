@@ -1,4 +1,4 @@
-﻿# Git guide:
+# Git guide:
 
 	- In order to use git with the Windows operating system you need to download the git bash through https://git-scm.com/downloads. 
 	- I recommend using HTTPS instead of SSH because with Windows you have to take some extra steps to work with SSH.
