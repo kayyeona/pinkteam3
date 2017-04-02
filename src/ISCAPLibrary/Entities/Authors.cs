@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace ISCAPLibrary
+namespace ISCAPLibrary.Entities
 {
     public partial class Authors
     {

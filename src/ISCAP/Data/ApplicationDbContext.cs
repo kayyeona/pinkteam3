@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using ISCAP.Models;
-using ISCAPLibrary;
+using ISCAPLibrary.Entities;
 
 namespace ISCAP.Data
 {

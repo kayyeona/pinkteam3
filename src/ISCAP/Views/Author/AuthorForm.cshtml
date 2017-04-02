@@ -1,0 +1,39 @@
+﻿@model ISCAPLibrary.Entities.Authors
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Authors</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+        body {
+            background-color: #BCC6CC;
+        }
+
+        h2 {
+            color: #7D1B7E;
+            text-align: center;
+        }
+
+        a {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <form action="/Author/SaveForm" method="post">
+        <span class="label label-default">Author ID</span> <input type="text" name="AuthorId" value="" /> <br />
+        <span class="label label-default">Submission ID</span> <input type="text" name="SubmissionId" value="" /> <br />
+        <span class="label label-default">Author Order</span> <input type="text" name="AuthorOrder" value="" /> <br />
+        <span class="label label-default">Co-Author</span> <input type="text" name="CAuthor" value="" /> <br />
+        <span class="label label-default">Date Added</span> <input type="text" name="DateAdded" value="" /> <br />
+        <span class="label label-default">College ID</span> <input type="text" name="CollegeId" value="" /> <br />
+        <span class="label label-default">Journal</span> <input type="text" name="JournalYes" value="" /> <br />
+        <span class="label label-default">Conference</span> <input type="text" name="ConferenceYes" value="" /> <br />
+        <button type="submit" value="submit" class="btn btn-primary">Submit</button>
+    </form>
+</body>
+</html>
