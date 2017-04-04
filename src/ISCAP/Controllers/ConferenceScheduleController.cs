@@ -8,18 +8,15 @@ using ISCAP.Data;
 
 namespace ISCAP.Controllers
 {
-    [Route("Author")]
-    public class AuthorController : Controller
+    [Route("ConferenceSchedule")]
+    public class ConferenceScheduleController : Controller
     {
         public ApplicationDbContext db;
 
-        public AuthorController(ApplicationDbContext db)
+        public ConferenceScheduleController(ApplicationDbContext db)
         {
             this.db = db;
         }
-        
-
-
         [HttpGet]
         [Route("Form")]
         public ViewResult Form()
@@ -29,12 +26,13 @@ namespace ISCAP.Controllers
 
         [HttpPost]
         [Route("SaveForm")]
-        public ContentResult SaveForm(Authors form)
+        public ContentResult SaveChange(ConferenceSchedule form)
         {
-            db.Authors.Add(form);
+            db.ConferenceSchedule.Add(form);
 
             db.SaveChanges();
-            return Content("all data saved");
+
+            return Content("all data saved.");
         }
     }
 }

@@ -5,7 +5,6 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using ISCAP.Models;
-using ISCAPLibrary.Entities;
 
 namespace ISCAP.Data
 {
@@ -17,9 +16,8 @@ namespace ISCAP.Data
         }
 
         public virtual DbSet<Authors> Authors { get; set; }
-        public virtual DbSet<AuthorsForms> AuthorsForms { get; set; }
 
-        public virtual DbSet<AuthorsForms> Authors2 { get; set; }
+        public virtual DbSet<ConferenceSchedule> ConferenceSchedule { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

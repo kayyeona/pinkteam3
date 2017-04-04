@@ -1,0 +1,38 @@
+﻿@model ISCAP.Models.ConferenceSchedule
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Authors</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+        body {
+            background-color: #BCC6CC;
+        }
+
+        h2 {
+            color: #7D1B7E;
+            text-align: center;
+        }
+
+        a {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <form action="/ConferenceSchedule/SaveForm" method="post">
+        <span class="label label-default">Day</span> <input type="text" name="Day" value="" /> <br />
+        <span class="label label-default">Event Name</span> <input type="text" name="EventName" value="" /> <br />
+        <span class="label label-default">Location</span> <input type="text" name="Location" value="" /> <br />
+        <span class="label label-default">Meeting Time</span> <input type="text" name="MeetingTime" value="" /> <br />
+        <span class="label label-default">Start Time</span> <input type="text" name="StartTime" value="" /> <br />
+        <span class="label label-default">End Time</span> <input type="text" name="EndTime" value="" /> <br />
+        <span class="label label-default">Description</span> <input type="text" name="Description" value="" /> <br />
+        <button type="submit" value="submit" class="btn btn-primary">Submit</button>
+    </form>
+</body>
+</html>
