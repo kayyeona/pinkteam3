@@ -4,12 +4,22 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using ISCAPLibrary.Entities;
+using ISCAP.Data;
 
 namespace ISCAP.Controllers
 {
     [Route("Author")]
     public class AuthorController : Controller
     {
+        public ApplicationDbContext db;
+
+        public AuthorController(ApplicationDbContext db)
+        {
+            this.db = db;
+        }
+        
+
+
         [HttpGet]
         [Route("Form")]
         public ViewResult AuthorForm()
@@ -19,9 +29,12 @@ namespace ISCAP.Controllers
 
         [HttpPost]
         [Route("SaveForm")]
-        public ViewResult SaveForm(Authors form)
+        public ContentResult SaveForm(Authors form)
         {
-            return View();
+            db.Authors.Add(form);
+
+            db.SaveChanges();
+            return Content("WWWWWWWWorks");
         }
     }
 }
