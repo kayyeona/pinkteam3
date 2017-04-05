@@ -12,19 +12,38 @@ namespace ISCAP.Models
     {
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ID { get; set; }
+
         [Required]
         public string Day { get; set; }
+
+        /*[Required]
+        public string Chair { get; set; }*/
+
         [Required]
         public string EventName { get; set; }
+
         [Required]
         public string Location { get; set; }
+
         [Required]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:hh:mm tt}")]
         public DateTime MeetingTime { get; set; }
+
         [Required]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:hh:mm tt}")]
         public DateTime StartTime { get; set; }
+
         [Required]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:hh:mm tt}")]
         public DateTime EndTime { get; set; }
+
+        /*[Required]
+        public string SessionType { get; set; }*/
+        /*
         [Required]
-        public string Description { get; set; }
+        public string AuthorName { get; set; }*/
+        /*
+        [Required]
+        public string AuthorInst { get; set; }*/
     }
 }
