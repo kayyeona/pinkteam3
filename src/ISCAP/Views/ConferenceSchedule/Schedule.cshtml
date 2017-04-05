@@ -1,0 +1,33 @@
+﻿@model List<ISCAP.Models.ConferenceSchedule>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <input type="button" value="Saturday" onclick="location.href='@Url.Action("Schedule/Saturday", "ConferenceSchedule")'" />
+    <input type="button" value="Sunday" onclick="location.href='@Url.Action("Schedule/Sunday", "ConferenceSchedule")'" />
+    <input type="button" value="Monday" onclick="location.href='@Url.Action("Schedule/Monday", "ConferenceSchedule")'" />
+    <input type="button" value="Tuesday" onclick="location.href='@Url.Action("Schedule/Tuesday", "ConferenceSchedule")'" />
+    <input type="button" value="Wednesday" onclick="location.href='@Url.Action("Schedule/Wednesday", "ConferenceSchedule")'" />
+    <input type="button" value="Thursday" onclick="location.href='@Url.Action("Schedule/Thursday", "ConferenceSchedule")'" />
+    <input type="button" value="Friday" onclick="location.href='@Url.Action("Schedule/Friday", "ConferenceSchedule")'" />
+
+    <ul>
+        @foreach (var s in Model)
+        {
+            <li>
+                The day is @s.Day, @s.MeetingTime
+            </li>
+            <li>
+                @s.EventName
+            </li>
+            <li>
+                @s.Description
+            </li>
+        }
+    </ul>
+
+</body>
+</html>

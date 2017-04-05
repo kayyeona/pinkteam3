@@ -25,7 +25,16 @@
 </head>
 <body>
     <form action="/ConferenceSchedule/SaveForm" method="post">
-        <span class="label label-default">Day</span> <input type="text" name="Day" value="" /> <br />
+        <span class="label label-default">Day</span>
+        <select name="Day">
+            <option value="Saturday">Saturday</option>
+            <option value="Sunday">Sunday</option>
+            <option value="Monday">Monday</option>
+            <option value="Tuesday">Tuesday</option>
+            <option value="Wednesday">Wednesday</option>
+            <option value="Thursday">Thursday</option>
+            <option value="Friday">Friday</option>
+        </select> <br />
         <span class="label label-default">Event Name</span> <input type="text" name="EventName" value="" /> <br />
         <span class="label label-default">Location</span> <input type="text" name="Location" value="" /> <br />
         <span class="label label-default">Meeting Time</span> <input type="text" name="MeetingTime" value="" /> <br />

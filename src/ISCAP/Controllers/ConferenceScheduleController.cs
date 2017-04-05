@@ -17,15 +17,14 @@ namespace ISCAP.Controllers
         {
             this.db = db;
         }
-        [HttpGet]
-        [Route("Form")]
+
+        [HttpGet, Route("Form")]
         public ViewResult Form()
         {
             return View();
         }
-
-        [HttpPost]
-        [Route("SaveForm")]
+       
+        [HttpPost, Route("SaveForm")]
         public ContentResult SaveChange(ConferenceSchedule form)
         {
             db.ConferenceSchedule.Add(form);
@@ -33,6 +32,20 @@ namespace ISCAP.Controllers
             db.SaveChanges();
 
             return Content("all data saved.");
+        }
+
+        [HttpGet, Route("Schedule")]
+        public ViewResult Schedule()
+        {
+            var entireSchedule = db.ConferenceSchedule.ToList();
+            return View(entireSchedule);
+        }
+
+        [HttpGet, Route("Schedule/{day}")]
+        public ViewResult Schedule(string day)
+        {
+            var schedule = db.ConferenceSchedule.Where(s => s.Day == day).ToList();
+            return View(schedule);
         }
     }
 }
