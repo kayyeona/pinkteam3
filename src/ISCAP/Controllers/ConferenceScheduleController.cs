@@ -5,6 +5,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using ISCAP.Models;
 using ISCAP.Data;
+using ISCAP.ViewModel;
+
 
 namespace ISCAP.Controllers
 {
@@ -23,7 +25,43 @@ namespace ISCAP.Controllers
         {
             return View();
         }
-       
+
+        [HttpGet, Route("SessionForm")]
+        public ViewResult SessionForm()
+        {
+            SessionDetail sd = new SessionDetail();
+            sd.number = 0;
+            return View(sd);
+        }
+
+        [HttpPost, Route("SessionForm")]
+        public ViewResult SessionForm(SessionDetail sd)
+        {
+            return View(sd);
+        }
+
+        [HttpPost, Route("SessionSaveForm")]
+        public ContentResult SessionSaveForm(SessionDetail form)
+        {
+            
+            Session tSession = new Session();
+            for (var i = 0; i < form.Session.Count; i++)
+            {
+                tSession.conference = form.Session[i].conference;
+                tSession.title = form.Session[i].title;
+                tSession.writers = form.Session[i].writers;
+
+                db.Session.Add(tSession);
+            }
+
+            db.SessionDetail.Add(form);
+            db.SaveChanges();
+
+
+            return Content("SessionSaveForm Works!");
+        }
+
+
         [HttpPost, Route("SaveForm")]
         public ContentResult SaveChange(ConferenceSchedule form)
         {
@@ -37,8 +75,12 @@ namespace ISCAP.Controllers
         [HttpGet, Route("Schedule")]
         public ViewResult Schedule()
         {
-            var entireSchedule = db.ConferenceSchedule.ToList();
-            return View(entireSchedule);
+            ConferenceScheduleViewModel cs = new ConferenceScheduleViewModel();
+            cs.ConferenceSchedule = db.ConferenceSchedule.ToList();
+            cs.SessionDetail = db.SessionDetail.ToList();
+            cs.Session = db.Session.ToList();
+            
+            return View(cs);
         }
 
         [HttpGet, Route("Schedule/{day}")]

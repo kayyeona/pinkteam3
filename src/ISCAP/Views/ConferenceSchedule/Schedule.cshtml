@@ -1,4 +1,4 @@
-﻿@model List<ISCAP.Models.ConferenceSchedule>
+﻿@model ISCAP.ViewModel.ConferenceScheduleViewModel
 
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -14,20 +14,43 @@
     <input type="button" value="Thursday" onclick="location.href='@Url.Action("Schedule/Thursday", "ConferenceSchedule")'" />
     <input type="button" value="Friday" onclick="location.href='@Url.Action("Schedule/Friday", "ConferenceSchedule")'" />
 
-    <ul>
-        @foreach (var s in Model)
+    <table class="table table-inverse">
+        @foreach (var s in Model.ConferenceSchedule)
         {
-            <li>
-                The day is @s.Day, @s.MeetingTime
-            </li>
-            <li>
+        <tr>
+            <td>
+                @s.Day
+            </td>
+            <td>
+                @s.MeetingTime
+            </td>
+            <td>
                 @s.EventName
-            </li>
-            <li>
-                @s.Description
-            </li>
+            </td>
+        </tr>
         }
-    </ul>
+    </table>
+
+    <table class="table table-inverse">
+        @foreach (var i in Model.SessionDetail)
+        {
+            <tr>
+                <td>@i.location</td>
+                <td>@i.chair</td>
+                @foreach (var x in Model.Session)
+                {
+                    if (x.sessionDetailId == i.sessionDetailId)
+                    { 
+                        <td>@x.title <br/> @x.conference <br/> @x.writers</td>
+                    }
+                }
+            </tr>
+        }
+    </table>
+
+
+
+
 
 </body>
 </html>
