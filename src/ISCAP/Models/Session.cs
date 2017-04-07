@@ -17,9 +17,9 @@ namespace ISCAP.Models
         public string title { get; set; }
         [Required]
         public string writers { get; set; }
-        [Required]
-        public int sessionDetailId { get; set; }
-        [Required]
-        public string paperType { get; set; }
+
+        public int? sessionDetailId { get; set; }
+        //[Required]
+        ////public string paperType { get; set; }
     }
 }
