@@ -15,10 +15,7 @@ namespace ISCAP.Models
 
         [Required]
         public string Day { get; set; }
-
-        /*[Required]
-        public string Chair { get; set; }*/
-
+        
         [Required]
         public string EventName { get; set; }
 
@@ -36,14 +33,5 @@ namespace ISCAP.Models
         [Required]
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:hh:mm tt}")]
         public DateTime EndTime { get; set; }
-
-        /*[Required]
-        public string SessionType { get; set; }*/
-        /*
-        [Required]
-        public string AuthorName { get; set; }*/
-        /*
-        [Required]
-        public string AuthorInst { get; set; }*/
     }
 }

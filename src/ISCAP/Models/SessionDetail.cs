@@ -11,11 +11,17 @@ namespace ISCAP.Models
     public class SessionDetail
     {
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int sessionDetailId { get; set; }        
+        [Required]
+        public int sessionDetailId { get; set; }    
+        [Required]    
         public string location { get; set; }
+        [Required]
         public string chair { get; set; }
+        [Required]
         public DateTime date { get; set; }
+        [Required]
         public int number { get; set; }
+        [Required]
         [ForeignKey("sessionDetailId")]
         public List<Session> Session { get; set; }
 
