@@ -8,8 +8,8 @@ using ISCAP.Data;
 namespace ISCAP.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20170407035833_InitialMigrations")]
-    partial class InitialMigrations
+    [Migration("20170409064829_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -116,15 +116,18 @@ namespace ISCAP.Migrations
                     b.Property<int>("sessionId")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<string>("authors")
+                        .IsRequired();
+
                     b.Property<string>("conference")
+                        .IsRequired();
+
+                    b.Property<string>("paperType")
                         .IsRequired();
 
                     b.Property<int?>("sessionDetailId");
 
                     b.Property<string>("title")
-                        .IsRequired();
-
-                    b.Property<string>("writers")
                         .IsRequired();
 
                     b.HasKey("sessionId");
@@ -148,6 +151,9 @@ namespace ISCAP.Migrations
                         .IsRequired();
 
                     b.Property<int>("number");
+
+                    b.Property<string>("paperType")
+                        .IsRequired();
 
                     b.HasKey("sessionDetailId");
 

@@ -49,7 +49,8 @@ namespace ISCAP.Controllers
             {
                 tSession.conference = form.Session[i].conference;
                 tSession.title = form.Session[i].title;
-                tSession.writers = form.Session[i].writers;
+                tSession.authors = form.Session[i].authors;
+                
 
                 db.Session.Add(tSession);
             }

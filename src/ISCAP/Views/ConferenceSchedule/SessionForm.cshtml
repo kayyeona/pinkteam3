@@ -39,12 +39,24 @@
                     <option value="Monday">EDSIG</option>
                 </select> <br />
                 <span class="label label-default">Title</span> <input type="text" name="Session[@i].title" value="" /> <br />
-                <span class="label label-default">Writers</span> <input type="text" name="Session[@i].writers" value="" /> <br />
+                <span class="label label-default">Authors</span> <input type="text" name="Session[@i].authors" value="" /> <br />
+                <span class="label label-default">Paper Type</span> 
+                <select name="Type">
+                    <option value="CONISAR Abstract">CONISAR Abstract</option>
+                    <option value="CONISAR Paper">CONISAR Paper</option>
+                    <option value="EDSIG Abstract">EDSIG Abstract</option>
+                    <option value="EDSIG Case">EDSIG Case</option>
+                    <option value="EDSIG Case(TorB)">EDSIG Case (Teaching or Business)</option>
+                    <option value="EDSIG Panel">EDSIG Panel</option>
+                    <option value="EDSIG Paper">EDSIG Paper</option>
+                    <option value="EDSIG Workshop">EDSIG Workshop</option>
+                </select> <br />
             }
         }
         <button type="submit" value="submit" class="btn btn-primary">Submit</button>
-    </form>    
+    </form>
     <form style="display:inline-block; vertical-align:top" action="/ConferenceSchedule/SessionForm/" method="post">
+        <br />
         <span class="label label-default">Number of sessions</span> <input type="text" name="number" value="" />
         <button type="submit" value="Generate Sessions">Generate Sessions</button>
     </form>

@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace ISCAP.Migrations
 {
-    public partial class InitialMigrations : Migration
+    public partial class Initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -78,7 +78,8 @@ namespace ISCAP.Migrations
                     chair = table.Column<string>(nullable: false),
                     date = table.Column<DateTime>(nullable: false),
                     location = table.Column<string>(nullable: false),
-                    number = table.Column<int>(nullable: false)
+                    number = table.Column<int>(nullable: false),
+                    paperType = table.Column<string>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -160,10 +161,11 @@ namespace ISCAP.Migrations
                 {
                     sessionId = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    authors = table.Column<string>(nullable: false),
                     conference = table.Column<string>(nullable: false),
+                    paperType = table.Column<string>(nullable: false),
                     sessionDetailId = table.Column<int>(nullable: true),
-                    title = table.Column<string>(nullable: false),
-                    writers = table.Column<string>(nullable: false)
+                    title = table.Column<string>(nullable: false)
                 },
                 constraints: table =>
                 {

@@ -9,30 +9,41 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+        body {
+            background-color: #bcccc8;
+        }
+
+        h2 {
+            color: #451b7e;
+            text-align: center;
+        }
+
+        a {
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-    <input type="button" value="Saturday" onclick="location.href='@Url.Action("Schedule/Saturday", "ConferenceSchedule")'" />
     <input type="button" value="Sunday" onclick="location.href='@Url.Action("Schedule/Sunday", "ConferenceSchedule")'" />
     <input type="button" value="Monday" onclick="location.href='@Url.Action("Schedule/Monday", "ConferenceSchedule")'" />
     <input type="button" value="Tuesday" onclick="location.href='@Url.Action("Schedule/Tuesday", "ConferenceSchedule")'" />
     <input type="button" value="Wednesday" onclick="location.href='@Url.Action("Schedule/Wednesday", "ConferenceSchedule")'" />
-    <input type="button" value="Thursday" onclick="location.href='@Url.Action("Schedule/Thursday", "ConferenceSchedule")'" />
-    <input type="button" value="Friday" onclick="location.href='@Url.Action("Schedule/Friday", "ConferenceSchedule")'" />
 
     <table class="table table-inverse">
         @foreach (var s in Model.ConferenceSchedule)
         {
-        <tr>
-            <td>
-                @s.Day
-            </td>
-            <td>
-                @s.MeetingTime
-            </td>
-            <td>
-                @s.EventName
-            </td>
-        </tr>
+            <tr>
+                <td>
+                    @s.Day
+                </td>
+                <td>
+                    @s.MeetingTime
+                </td>
+                <td>
+                    @s.EventName
+                </td>
+            </tr>
         }
     </table>
 
@@ -45,8 +56,8 @@
                 @foreach (var x in Model.Session)
                 {
                     if (x.sessionDetailId == i.sessionDetailId)
-                    { 
-                        <td>@x.title <br/> @x.conference <br/> @x.writers</td>
+                    {
+                        <td>@x.title <br /> @x.conference <br /> @x.authors</td>
                     }
                 }
             </tr>

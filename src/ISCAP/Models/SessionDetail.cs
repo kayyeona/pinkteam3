@@ -24,6 +24,8 @@ namespace ISCAP.Models
         [Required]
         [ForeignKey("sessionDetailId")]
         public List<Session> Session { get; set; }
+        [Required]
+        public string paperType { get; set; }
 
     }
 }
