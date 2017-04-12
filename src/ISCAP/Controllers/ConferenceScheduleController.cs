@@ -45,10 +45,24 @@ namespace ISCAP.Controllers
         [HttpGet, Route("Schedule")]
         public ViewResult Schedule()
         {
+            List<Session> Session;
             ReadConferenceScheduleViewModel cs = new ReadConferenceScheduleViewModel();
+
             cs.Event = db.Event.ToList();
             cs.Slot = db.Slot.ToList();
-            cs.Session = db.Session.ToList();
+
+            Session = db.Session.ToList();
+
+            for (var i = 0; i > cs.Slot.Count; i++)
+            {
+                for (var x = 0; x > Session.Count; x++)
+                {
+                    if (cs.Slot[i].slotId == Session[x].slotId)
+                    {
+                        cs.Slot[i].Session.Add(Session[x]);
+                    }
+                }
+            }
 
             return View(cs);
         }

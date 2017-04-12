@@ -36,12 +36,9 @@
         {
             <tr>
                 <td>@i.chair</td>
-                @foreach (var x in Model.Session)
+                @foreach (var x in i.Session)
                 {
-                    if (x.slotId == i.slotId)
-                    {
-                        <td>@x.title <br /> @x.conference <br /> @x.authors</td>
-                    }
+                    <td>@x.title <br /> @x.conference <br /> @x.authors</td>
                 }
             </tr>
         }

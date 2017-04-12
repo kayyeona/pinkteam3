@@ -10,6 +10,5 @@ namespace ISCAP.ViewModel
     {
         public List<Event> Event { get; set; }
         public List<Slot> Slot { get; set; }
-        public List<Session> Session { get; set; }
     }
 }
