@@ -23,72 +23,52 @@ namespace ISCAP.Controllers
         [HttpGet, Route("Form")]
         public ViewResult Form()
         {
-            return View();
-        }
+            WriteConferenceScheduleViewModel cs = new WriteConferenceScheduleViewModel();
+            cs.Event = new Event();
+            return View(cs);
+        }       
 
-        [HttpGet, Route("SessionForm")]
-        public ViewResult SessionForm()
+        [HttpPost, Route("Save")]
+        public RedirectResult Save(WriteConferenceScheduleViewModel cs)
         {
-            SessionDetail sd = new SessionDetail();
-            sd.number = 0;
-            return View(sd);
-        }
-
-        [HttpPost, Route("SessionForm")]
-        public ViewResult SessionForm(SessionDetail sd)
-        {
-            return View(sd);
-        }
-
-        [HttpPost, Route("SessionSaveForm")]
-        public ContentResult SessionSaveForm(SessionDetail form)
-        {
-            
-            Session tSession = new Session();
-            for (var i = 0; i < form.Session.Count; i++)
+            if (cs.Event.EventName == "Session")
             {
-                tSession.conference = form.Session[i].conference;
-                tSession.title = form.Session[i].title;
-                tSession.authors = form.Session[i].authors;                
+                Session ts = new Session();
+                for (var i = 0; i < cs.Slot.Session.Count; i++)
+                {
+                    ts.conference = cs.Slot.Session[i].conference;
+                    ts.title = cs.Slot.Session[i].title;
+                    ts.authors = cs.Slot.Session[i].authors;
 
 
-                db.Session.Add(tSession);
+                    db.Session.Add(ts);
+                }
+                db.Slot.Add(cs.Slot);                
             }
-
-            db.SessionDetail.Add(form);
-            db.SaveChanges();
-
-
-            return Content("SessionSaveForm Works!");
-        }
-
-
-        [HttpPost, Route("SaveForm")]
-        public ContentResult SaveChange(ConferenceSchedule form)
-        {
-            db.ConferenceSchedule.Add(form);
+            db.Event.Add(cs.Event);
 
             db.SaveChanges();
 
-            return Content("all data saved.");
+            return Redirect("http://localhost:9459/ConferenceSchedule/Schedule");
         }
 
         [HttpGet, Route("Schedule")]
         public ViewResult Schedule()
         {
-            ConferenceScheduleViewModel cs = new ConferenceScheduleViewModel();
-            cs.ConferenceSchedule = db.ConferenceSchedule.ToList();
-            cs.SessionDetail = db.SessionDetail.ToList();
+            ReadConferenceScheduleViewModel cs = new ReadConferenceScheduleViewModel();
+            cs.Event = db.Event.ToList();
+            cs.Slot = db.Slot.ToList();
             cs.Session = db.Session.ToList();
-            
+
             return View(cs);
         }
 
-        [HttpGet, Route("Schedule/{day}")]
-        public ViewResult Schedule(string day)
-        {
-            var schedule = db.ConferenceSchedule.Where(s => s.Day == day).ToList();
-            return View(schedule);
-        }
+        // For Filtering by days..not done yet...old version
+        //[HttpGet, Route("Schedule/{day}")]
+        //public ViewResult Schedule(string day)
+        //{
+        //    var schedule = db.ConferenceSchedule.Where(s => s.Day == day).ToList();
+        //    return View(schedule);
+        //}
     }
 }

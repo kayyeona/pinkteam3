@@ -17,8 +17,8 @@ namespace ISCAP.Data
 
         public virtual DbSet<Authors> Authors { get; set; }
 
-        public virtual DbSet<ConferenceSchedule> ConferenceSchedule { get; set; }
-        public virtual DbSet<SessionDetail> SessionDetail { get; set; }
+        public virtual DbSet<Event> Event { get; set; }
+        public virtual DbSet<Slot> Slot { get; set; }
         public virtual DbSet<Session> Session { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)

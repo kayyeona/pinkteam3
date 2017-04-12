@@ -1,43 +1,89 @@
-﻿@model ISCAP.Models.ConferenceSchedule
+﻿@model ISCAP.ViewModel.WriteConferenceScheduleViewModel
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>Authors</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <style>
-        body {
-            background-color: #BCC6CC;
-        }
-
-        h2 {
-            color: #7D1B7E;
-            text-align: center;
-        }
-
-        a {
-            text-align: center;
-        }
-    </style>
 </head>
 <body>
-    <form action="/ConferenceSchedule/SaveForm" method="post">
-        <span class="label label-default">Day</span>
-        <select name="Day">
+    <form action="/ConferenceSchedule/Save/" method="post">
+<span class="label label-default">Day</span>
+        <select name="Event.Day">
             <option value="Sunday">Sunday</option>
             <option value="Monday">Monday</option>
             <option value="Tuesday">Tuesday</option>
             <option value="Wednesday">Wednesday</option>
+        </select> &nbsp &nbsp &nbsp
+        <input type="checkbox" id="isSession" name="" value="" onclick="SessionEnabled(this);" /> <span class="label label-default">Session</span> <br />
+        <br />       
+        <span class="label label-default">Event Name</span> <input type="text" name="Event.EventName" value="" id="EventName"/> <br />
+        <span class="label label-default">Location</span> <input type="text" name="Event.Location" value="" /> <br />
+        <span class="label label-default">Meeting Time</span> <input type="text" name="Event.MeetingTime" value="" /> <br />
+        <span class="label label-default">Start Time</span> <input type="text" name="Event.StartTime" value="" /> <br />
+        <span class="label label-default">End Time</span> <input type="text" name="Event.EndTime" value="" /> <br />
+        <br />
+        <span class="label label-default">Chair</span> <input type="text" name="Slot.chair" value="" class="session" disabled /> <br />
+        <span class="label label-default">Paper Type</span>
+        <select name="Slot.paperType">
+            <option value="CONISAR Abstract">CONISAR Abstract</option>
+            <option value="CONISAR Paper">CONISAR Paper</option>
+            <option value="EDSIG Abstract">EDSIG Abstract</option>
+            <option value="EDSIG Case">EDSIG Case</option>
+            <option value="EDSIG Case(TorB)">EDSIG Case (Teaching or Business)</option>
+            <option value="EDSIG Panel">EDSIG Panel</option>
+            <option value="EDSIG Paper">EDSIG Paper</option>
+            <option value="EDSIG Workshop">EDSIG Workshop</option>
         </select> <br />
-        <span class="label label-default">Event Name</span> <input type="text" name="EventName" value="" /> <br />
-        <span class="label label-default">Location</span> <input type="text" name="Location" value="" /> <br />
-        <span class="label label-default">Meeting Time</span> <input type="text" name="MeetingTime" value="" /> <br />
-        <span class="label label-default">Start Time</span> <input type="text" name="StartTime" value="" /> <br />
-        <span class="label label-default">End Time</span> <input type="text" name="EndTime" value="" /> <br />
+        <div id="hook"></div>
+        <button type="button" onclick="addSession()" class="session" disabled>Add Session</button>           
+        <input type="text" name="" value="" id="sessionForm" style="display: none;"/> <br />
         <button type="submit" value="submit" class="btn btn-primary">Submit</button>
     </form>
+    <script type="text/javascript">
+        var isSession = false;
+        var SessionEnabled = function (box) {
+            if (box.checked == true) {
+                document.getElementById('EventName').value = 'Session'
+                document.getElementById('EventName').disabled = false;
+                for (var i = 0; i < document.getElementsByClassName('session').length; i++) {
+                    document.getElementsByClassName('session')[i].disabled = false;
+                }
+            }
+            else
+            {
+                document.getElementById('EventName').value = null;
+                document.getElementById('EventName').disabled = false;
+                for (var i = 0; i < document.getElementsByClassName('session').length; i++) {
+                    document.getElementsByClassName('session')[i].disabled = true;
+                }
+            }
+            }
+    </script>
+    <script type="text/javascript">
+        var c = 0;
+        var addSession = function()
+        {            
+            var hook = document.getElementById('hook');
+            hook.appendChild(document.createElement('span')).textContent = 'Conference';
+            hook.appendChild(document.createTextNode("\u00A0"));
+            var conference = hook.appendChild(document.createElement('select'))
+            conference.name = "Slot.Session[" + c + "].conference";
+            conference.appendChild(document.createElement('option')).textContent = 'CONISAR';
+            conference.appendChild(document.createElement('option')).textContent = 'EDSIG';
+            hook.appendChild(document.createElement('br'));
+            hook.appendChild(document.createElement('span')).textContent = 'Title';
+            hook.appendChild(document.createTextNode("\u00A0"));
+            var titleInput = hook.appendChild(document.createElement('input'));
+            titleInput.name = "Slot.Session[" + c + "].title";
+            hook.appendChild(document.createElement('br'));
+            hook.appendChild(document.createElement('span')).textContent = 'Authors';
+            hook.appendChild(document.createTextNode("\u00A0"));
+            var authorsInput = hook.appendChild(document.createElement('input'));
+            authorsInput.name = 'Slot.Session[' + c + '].authors';
+            hook.appendChild(document.createElement('br'));
+            c++;
+        }
+    </script>
 </body>
 </html>

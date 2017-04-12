@@ -1,4 +1,4 @@
-﻿@model ISCAP.ViewModel.ConferenceScheduleViewModel
+﻿@model ISCAP.ViewModel.ReadConferenceScheduleViewModel
 
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -7,22 +7,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <style>
-        body {
-            background-color: #bcccc8;
-        }
-
-        h2 {
-            color: #451b7e;
-            text-align: center;
-        }
-
-        a {
-            text-align: center;
-        }
-    </style>
 </head>
 <body>
     <input type="button" value="Sunday" onclick="location.href='@Url.Action("Schedule/Sunday", "ConferenceSchedule")'" />
@@ -31,7 +15,7 @@
     <input type="button" value="Wednesday" onclick="location.href='@Url.Action("Schedule/Wednesday", "ConferenceSchedule")'" />
 
     <table class="table table-inverse">
-        @foreach (var s in Model.ConferenceSchedule)
+        @foreach (var s in Model.Event)
         {
             <tr>
                 <td>
@@ -48,14 +32,13 @@
     </table>
 
     <table class="table table-inverse">
-        @foreach (var i in Model.SessionDetail)
+        @foreach (var i in Model.Slot)
         {
             <tr>
-                <td>@i.location</td>
                 <td>@i.chair</td>
                 @foreach (var x in Model.Session)
                 {
-                    if (x.sessionDetailId == i.sessionDetailId)
+                    if (x.slotId == i.slotId)
                     {
                         <td>@x.title <br /> @x.conference <br /> @x.authors</td>
                     }

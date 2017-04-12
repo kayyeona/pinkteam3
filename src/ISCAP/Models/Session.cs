@@ -18,7 +18,7 @@ namespace ISCAP.Models
         [Required]
         public string authors { get; set; }
 
-        public int? sessionDetailId { get; set; }
+        public int? slotId { get; set; }
         
     }
 }

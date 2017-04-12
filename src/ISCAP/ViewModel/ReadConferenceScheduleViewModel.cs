@@ -6,10 +6,10 @@ using ISCAP.Models;
 
 namespace ISCAP.ViewModel
 {
-    public class ConferenceScheduleViewModel
+    public class ReadConferenceScheduleViewModel
     {
-        public List<ConferenceSchedule> ConferenceSchedule { get; set; }
-        public List<SessionDetail> SessionDetail { get; set; }
+        public List<Event> Event { get; set; }
+        public List<Slot> Slot { get; set; }
         public List<Session> Session { get; set; }
     }
 }
