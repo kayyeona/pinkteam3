@@ -10,6 +10,5 @@ namespace ISCAP.ViewModel
     {
         public Event Event { get; set; }
         public Slot Slot { get; set; }
-        public Session Session { get; set; }
     }
 }

@@ -33,16 +33,6 @@ namespace ISCAP.Controllers
         {
             if (cs.Event.EventName == "Session")
             {
-                Session ts = new Session();
-                for (var i = 0; i < cs.Slot.Session.Count; i++)
-                {
-                    ts.conference = cs.Slot.Session[i].conference;
-                    ts.title = cs.Slot.Session[i].title;
-                    ts.authors = cs.Slot.Session[i].authors;
-
-
-                    db.Session.Add(ts);
-                }
                 db.Slot.Add(cs.Slot);                
             }
             db.Event.Add(cs.Event);

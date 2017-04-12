@@ -234,6 +234,9 @@ C:\Users\mrmon_000\Desktop\Black\iscap\src\ISCAP\Controllers\HomeController.cs
 C:\Users\mrmon_000\Desktop\Black\iscap\src\ISCAP\Controllers\ManageController.cs
 C:\Users\mrmon_000\Desktop\Black\iscap\src\ISCAP\Data\ApplicationDbContext.cs
 C:\Users\mrmon_000\Desktop\Black\iscap\src\ISCAP\Data\DbInitializer.cs
+C:\Users\mrmon_000\Desktop\Black\iscap\src\ISCAP\Migrations\20170412083511_inital.cs
+C:\Users\mrmon_000\Desktop\Black\iscap\src\ISCAP\Migrations\20170412083511_inital.Designer.cs
+C:\Users\mrmon_000\Desktop\Black\iscap\src\ISCAP\Migrations\ApplicationDbContextModelSnapshot.cs
 C:\Users\mrmon_000\Desktop\Black\iscap\src\ISCAP\Models\ApplicationUser.cs
 C:\Users\mrmon_000\Desktop\Black\iscap\src\ISCAP\Models\Authors.cs
 C:\Users\mrmon_000\Desktop\Black\iscap\src\ISCAP\Models\Event.cs
