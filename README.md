@@ -16,5 +16,5 @@
 
 
 
-![Entities Diagram](entitiesDiagram.jpg)
+![Entities Diagram](entities_Diagram.jpg)
 	
