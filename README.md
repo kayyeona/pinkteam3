@@ -14,5 +14,7 @@
 	- git commit -m "<message here>" 
 	- git push origin <branch name here> 
 
-	![Entities Diagram](entitiesDiagram.jpg)
+
+
+![Entities Diagram](entitiesDiagram.jpg)
 	
