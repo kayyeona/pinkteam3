@@ -32,11 +32,12 @@
     </table>
 
     <table class="table table-inverse">
-        @foreach (var i in Model.Slot)
+        @foreach (var i in Model.Room)
         {
             <tr>
+                <td>@i.roomName</td>
                 <td>@i.chair</td>
-                @foreach (var x in i.Session)
+                @foreach (var x in i.Slot)
                 {
                     <td>@x.title <br /> @x.conference <br /> @x.authors</td>
                 }

@@ -33,7 +33,7 @@ namespace ISCAP.Controllers
         {
             if (cs.Event.EventName == "Session")
             {
-                db.Slot.Add(cs.Slot);                
+                db.Room.Add(cs.Room);                
             }
             db.Event.Add(cs.Event);
 
@@ -45,21 +45,21 @@ namespace ISCAP.Controllers
         [HttpGet, Route("Schedule")]
         public ViewResult Schedule()
         {
-            List<Session> Session;
+            List<Slot> Slot;
             ReadConferenceScheduleViewModel cs = new ReadConferenceScheduleViewModel();
 
             cs.Event = db.Event.ToList();
-            cs.Slot = db.Slot.ToList();
+            cs.Room = db.Room.ToList();
 
-            Session = db.Session.ToList();
+            Slot = db.Slot.ToList();
 
-            for (var i = 0; i > cs.Slot.Count; i++)
+            for (var i = 0; i > cs.Room.Count; i++)
             {
-                for (var x = 0; x > Session.Count; x++)
+                for (var x = 0; x > Slot.Count; x++)
                 {
-                    if (cs.Slot[i].slotId == Session[x].slotId)
+                    if (cs.Room[i].roomId == Slot[x].roomId)
                     {
-                        cs.Slot[i].Session.Add(Session[x]);
+                        cs.Room[i].Slot.Add(Slot[x]);
                     }
                 }
             }

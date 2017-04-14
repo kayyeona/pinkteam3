@@ -11,7 +11,7 @@ namespace ISCAP.Models
     public class Event
     {
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int ID { get; set; }
+        public int eventID { get; set; }
 
         [Required]
         public string Day { get; set; }

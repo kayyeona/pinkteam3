@@ -9,6 +9,6 @@ namespace ISCAP.ViewModel
     public class WriteConferenceScheduleViewModel
     {
         public Event Event { get; set; }
-        public Slot Slot { get; set; }
+        public Room Room { get; set; }
     }
 }

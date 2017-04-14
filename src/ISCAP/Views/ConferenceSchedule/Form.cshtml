@@ -15,7 +15,7 @@
             <option value="Tuesday">Tuesday</option>
             <option value="Wednesday">Wednesday</option>
         </select> &nbsp &nbsp &nbsp
-        <input type="checkbox" id="isSession" name="" value="" onclick="SessionEnabled(this);" /> <span class="label label-default">Session</span> <br />
+        <input type="checkbox" id="isSlot" name="" value="" onclick="SessionEnabled(this);" /> <span class="label label-default">Is a Session</span> <br />
         <br />       
         <span class="label label-default">Event Name</span> <input type="text" name="Event.EventName" value="" id="EventName"/> <br />
         <span class="label label-default">Location</span> <input type="text" name="Event.Location" value="" /> <br />
@@ -23,9 +23,10 @@
         <span class="label label-default">Start Time</span> <input type="text" name="Event.StartTime" value="" /> <br />
         <span class="label label-default">End Time</span> <input type="text" name="Event.EndTime" value="" /> <br />
         <br />
-        <span class="label label-default">Chair</span> <input type="text" name="Slot.chair" value="" class="session" disabled /> <br />
+        <span class="label label-default">Room Name</span> <input type="text" name="Room.roomName" value="" class="isSession" disabled /> <br />
+        <span class="label label-default">Chair</span> <input type="text" name="Room.chair" value="" class="isSession" disabled /> <br />
         <span class="label label-default">Paper Type</span>
-        <select name="Slot.paperType">
+        <select name="Room.paperType" class="isSession" disabled>
             <option value="CONISAR Abstract">CONISAR Abstract</option>
             <option value="CONISAR Paper">CONISAR Paper</option>
             <option value="EDSIG Abstract">EDSIG Abstract</option>
@@ -36,51 +37,51 @@
             <option value="EDSIG Workshop">EDSIG Workshop</option>
         </select> <br />
         <div id="hook"></div>
-        <button type="button" onclick="addSession()" class="session" disabled>Add Session</button>           
-        <input type="text" name="" value="" id="sessionForm" style="display: none;"/> <br />
+        <button type="button" onclick="addSlot()" class="isSession" disabled>Add Slot</button>           
+        <input type="text" name="" value="" id="SlotForm" style="display: none;"/> <br />
         <button type="submit" value="submit" class="btn btn-primary">Submit</button>
     </form>
     <script type="text/javascript">
-        var isSession = false;
+        var isSlot = false;
         var SessionEnabled = function (box) {
             if (box.checked == true) {
                 document.getElementById('EventName').value = 'Session'
                 document.getElementById('EventName').disabled = false;
-                for (var i = 0; i < document.getElementsByClassName('session').length; i++) {
-                    document.getElementsByClassName('session')[i].disabled = false;
+                for (var i = 0; i < document.getElementsByClassName('isSession').length; i++) {
+                    document.getElementsByClassName('isSession')[i].disabled = false;
                 }
             }
             else
             {
                 document.getElementById('EventName').value = null;
                 document.getElementById('EventName').disabled = false;
-                for (var i = 0; i < document.getElementsByClassName('session').length; i++) {
-                    document.getElementsByClassName('session')[i].disabled = true;
+                for (var i = 0; i < document.getElementsByClassName('isSession').length; i++) {
+                    document.getElementsByClassName('isSession')[i].disabled = true;
                 }
             }
             }
     </script>
     <script type="text/javascript">
         var c = 0;
-        var addSession = function()
+        var addSlot = function()
         {            
             var hook = document.getElementById('hook');
             hook.appendChild(document.createElement('span')).textContent = 'Conference';
             hook.appendChild(document.createTextNode("\u00A0"));
             var conference = hook.appendChild(document.createElement('select'))
-            conference.name = "Slot.Session[" + c + "].conference";
+            conference.name = "Room.Slot[" + c + "].conference";
             conference.appendChild(document.createElement('option')).textContent = 'CONISAR';
             conference.appendChild(document.createElement('option')).textContent = 'EDSIG';
             hook.appendChild(document.createElement('br'));
             hook.appendChild(document.createElement('span')).textContent = 'Title';
             hook.appendChild(document.createTextNode("\u00A0"));
             var titleInput = hook.appendChild(document.createElement('input'));
-            titleInput.name = "Slot.Session[" + c + "].title";
+            titleInput.name = "Room.Slot[" + c + "].title";
             hook.appendChild(document.createElement('br'));
             hook.appendChild(document.createElement('span')).textContent = 'Authors';
             hook.appendChild(document.createTextNode("\u00A0"));
             var authorsInput = hook.appendChild(document.createElement('input'));
-            authorsInput.name = 'Slot.Session[' + c + '].authors';
+            authorsInput.name = 'Room.Slot[' + c + '].authors';
             hook.appendChild(document.createElement('br'));
             c++;
         }

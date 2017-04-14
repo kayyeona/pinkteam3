@@ -4,21 +4,22 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using ISCAP.Models;
+
 namespace ISCAP.Models
 {
-    public class Session
+    public class Room
     {
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int roomId { get; set; }
         [Required]
-        public int sessionId { get; set; }
+        public string roomName { get; set; }
         [Required]
-        public string conference { get; set; }
+        public string chair { get; set; }        
+        [ForeignKey("roomId")]
+        public List<Slot> Slot { get; set; }
         [Required]
-        public string title { get; set; }
-        [Required]
-        public string authors { get; set; }
+        public string paperType { get; set; }
 
-        public int? slotId { get; set; }
-        
     }
 }

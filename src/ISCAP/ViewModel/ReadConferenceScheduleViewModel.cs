@@ -9,6 +9,6 @@ namespace ISCAP.ViewModel
     public class ReadConferenceScheduleViewModel
     {
         public List<Event> Event { get; set; }
-        public List<Slot> Slot { get; set; }
+        public List<Room> Room { get; set; }
     }
 }
