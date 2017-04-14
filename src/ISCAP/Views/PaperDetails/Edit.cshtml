@@ -1,0 +1,57 @@
+@model ISCAP.Models.PaperDetails
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Edit</h2>
+
+<form asp-action="Edit">
+    <div class="form-horizontal">
+        <h4>PaperDetails</h4>
+        <hr />
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <input type="hidden" asp-for="ID" />
+        <div class="form-group">
+            <label asp-for="LastUpdate" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="LastUpdate" class="form-control" />
+                <span asp-validation-for="LastUpdate" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="PaperStatus" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="PaperStatus" class="form-control" />
+                <span asp-validation-for="PaperStatus" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="PaperTitle" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="PaperTitle" class="form-control" />
+                <span asp-validation-for="PaperTitle" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="TrackId" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="TrackId" class="form-control" />
+                <span asp-validation-for="TrackId" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+</form>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
