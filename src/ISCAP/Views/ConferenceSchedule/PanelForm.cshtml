@@ -1,0 +1,36 @@
+﻿@model ISCAP.Models.Panel
+
+<html xlms="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Panels</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <form action="/ConferenceSchedule/PanelSave/" method="post">
+        <span class="label label-default">Panel Title</span> <input type="text" name="panelTitle" value="" id="panelTitle" /> <br />
+        <span class="label label-default">Moderator Name</span> <input type="text" name="modName" value="" id="modName" /> <br />
+        <span class="label label-default">Moderator Affiliation</span> <input type="text" name="modAffil" value="" id="modAffil" /> <br />
+        <span class="label label-default">Moderator Email</span> <input type="text" name="modEmail" value="" id="modEmail" /> <br />
+        <span class="label label-default">Panelist Name</span> <input type="text" name="panelistName" value="" id="panelistName" /> <br />
+        <span class="label label-default">Panelist Affiliation</span> <input type="text" name="panelistAffil" value="" id="panelistAffil" /> <br />
+        <span class="label label-default">Panelist Email</span> <input type="text" name="panelistEmail" value="" id="panelistEmail" /> <br />
+        <span class="label label-default">Panel Overview</span> <br /> <textarea asp-for="panelOV" rows="5" cols="40"></textarea> <br />
+        <span class="label label-default">Target Audience</span> <br /> <textarea asp-for="targAud" rows="5" cols="40"></textarea> <br />
+        <span class="label label-default">Time Requested</span>
+        <select name="Slot.timeReq">
+            <option value="25">25 Minutes</option>
+            <option value="50">50 Minutes</option>
+            <option value="75">75 Minutes</option>
+        </select> <br />
+        <div id="hook"></div>
+        @*<button type="button" onclick="addPanel()" class="panel" disabled>Add Panel</button>*@
+        <input type="text" name="" value="" id="panelForm" style="display: none;" /> <br />
+        <button type="submit" value="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+</body>
+</html>
+
+
+

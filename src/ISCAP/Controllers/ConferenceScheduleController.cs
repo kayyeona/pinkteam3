@@ -67,6 +67,21 @@ namespace ISCAP.Controllers
             return View(cs);
         }
 
+        [HttpGet, Route("PanelForm")]
+        public ViewResult PanelForm()
+        {
+                  
+            return View();
+        }
+
+        [HttpPost, Route("PanelSave")]
+        public ContentResult PanelSave(Panel p)
+        {
+            db.Panel.Add(p);
+           
+            return Content("Panel Data Saved");
+        }
+
         // For Filtering by days..not done yet...old version
         //[HttpGet, Route("Schedule/{day}")]
         //public ViewResult Schedule(string day)
