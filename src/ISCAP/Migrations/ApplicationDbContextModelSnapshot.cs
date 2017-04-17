@@ -16,6 +16,47 @@ namespace ISCAP.Migrations
                 .HasAnnotation("ProductVersion", "1.0.1")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+            modelBuilder.Entity("ISCAP.Models.Abstract", b =>
+                {
+                    b.Property<int>("AbstractID")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Abstracts")
+                        .IsRequired();
+
+                    b.Property<string>("Affiliation")
+                        .IsRequired();
+
+                    b.Property<string>("Day")
+                        .IsRequired();
+
+                    b.Property<string>("Email")
+                        .IsRequired();
+
+                    b.Property<DateTime>("EndTime");
+
+                    b.Property<string>("FirstName")
+                        .IsRequired();
+
+                    b.Property<string>("LastName")
+                        .IsRequired();
+
+                    b.Property<string>("Location")
+                        .IsRequired();
+
+                    b.Property<DateTime>("StartTime");
+
+                    b.Property<string>("SubjectArea")
+                        .IsRequired();
+
+                    b.Property<string>("Title")
+                        .IsRequired();
+
+                    b.HasKey("AbstractID");
+
+                    b.ToTable("Abstract");
+                });
+
             modelBuilder.Entity("ISCAP.Models.ApplicationUser", b =>
                 {
                     b.Property<string>("Id");

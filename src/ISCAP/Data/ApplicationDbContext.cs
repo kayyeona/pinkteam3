@@ -21,6 +21,8 @@ namespace ISCAP.Data
         public virtual DbSet<Room> Room { get; set; }
         public virtual DbSet<Slot> Slot { get; set; }
         public virtual DbSet<Panel> Panel { get; set; }
+        public virtual DbSet<Abstract> Abstract { get; set; }
+
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

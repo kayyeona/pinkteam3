@@ -79,8 +79,23 @@ namespace ISCAP.Controllers
         {
             db.Panel.Add(p);
            
-            return Content("Panel Data Saved");
+            return Content("Abstract Data Saved");
         }
+        [HttpGet, Route("AbstractForm")]
+        public ViewResult AbstractForm()
+        {
+
+            return View();
+        }
+
+       [HttpPost, Route("AbstractSave")]
+        public ContentResult AbstractSave(Abstract a)
+        {
+            db.Abstract.Add(a);
+
+            return Content("Abstract Data Saved");
+        }
+
 
         // For Filtering by days..not done yet...old version
         //[HttpGet, Route("Schedule/{day}")]
