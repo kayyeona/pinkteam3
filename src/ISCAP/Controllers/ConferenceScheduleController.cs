@@ -78,8 +78,9 @@ namespace ISCAP.Controllers
         public ContentResult PanelSave(Panel p)
         {
             db.Panel.Add(p);
+            db.SaveChanges();
            
-            return Content("Abstract Data Saved");
+            return Content("Panel Data Saved");
         }
         [HttpGet, Route("AbstractForm")]
         public ViewResult AbstractForm()

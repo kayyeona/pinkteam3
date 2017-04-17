@@ -8,7 +8,7 @@ using ISCAP.Data;
 namespace ISCAP.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20170417010304_Initial")]
+    [Migration("20170417203445_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
