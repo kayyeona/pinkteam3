@@ -10,22 +10,22 @@ using ISCAP.Models;
 
 namespace ISCAP.Controllers
 {
-    public class ReviewerPapersController : Controller
+    public class ReviewerPaperController : Controller
     {
         private readonly ApplicationDbContext _context;
 
-        public ReviewerPapersController(ApplicationDbContext context)
+        public ReviewerPaperController(ApplicationDbContext context)
         {
             _context = context;    
         }
 
-        // GET: ReviewerPapers
+        // GET: ReviewerPaper
         public async Task<IActionResult> Index()
         {
-            return View(await _context.ReviewerPapers.ToListAsync());
+            return View(await _context.ReviewerPaper.ToListAsync());
         }
 
-        // GET: ReviewerPapers/Details/5
+        // GET: ReviewerPaper/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -33,38 +33,38 @@ namespace ISCAP.Controllers
                 return NotFound();
             }
 
-            var reviewerPapers = await _context.ReviewerPapers.SingleOrDefaultAsync(m => m.ID == id);
-            if (reviewerPapers == null)
+            var reviewerPaper = await _context.ReviewerPaper.SingleOrDefaultAsync(m => m.ID == id);
+            if (reviewerPaper == null)
             {
                 return NotFound();
             }
 
-            return View(reviewerPapers);
+            return View(reviewerPaper);
         }
 
-        // GET: ReviewerPapers/Create
+        // GET: ReviewerPaper/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: ReviewerPapers/Create
+        // POST: ReviewerPaper/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,LastUpdate,PaperStatus,PaperTitle,TrackId")] ReviewerPapers reviewerPapers)
+        public async Task<IActionResult> Create([Bind("ID,LastUpdate,PaperStatus,PaperTitle,TrackId")] ReviewerPaper reviewerPaper)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(reviewerPapers);
+                _context.Add(reviewerPaper);
                 await _context.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
-            return View(reviewerPapers);
+            return View(reviewerPaper);
         }
 
-        // GET: ReviewerPapers/Edit/5
+        // GET: ReviewerPaper/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -72,22 +72,22 @@ namespace ISCAP.Controllers
                 return NotFound();
             }
 
-            var reviewerPapers = await _context.ReviewerPapers.SingleOrDefaultAsync(m => m.ID == id);
-            if (reviewerPapers == null)
+            var reviewerPaper = await _context.ReviewerPaper.SingleOrDefaultAsync(m => m.ID == id);
+            if (reviewerPaper == null)
             {
                 return NotFound();
             }
-            return View(reviewerPapers);
+            return View(reviewerPaper);
         }
 
-        // POST: ReviewerPapers/Edit/5
+        // POST: ReviewerPaper/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ID,LastUpdate,PaperStatus,PaperTitle,TrackId")] ReviewerPapers reviewerPapers)
+        public async Task<IActionResult> Edit(int id, [Bind("ID,LastUpdate,PaperStatus,PaperTitle,TrackId")] ReviewerPaper reviewerPaper)
         {
-            if (id != reviewerPapers.ID)
+            if (id != reviewerPaper.ID)
             {
                 return NotFound();
             }
@@ -96,12 +96,12 @@ namespace ISCAP.Controllers
             {
                 try
                 {
-                    _context.Update(reviewerPapers);
+                    _context.Update(reviewerPaper);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!ReviewerPapersExists(reviewerPapers.ID))
+                    if (!ReviewerPaperExists(reviewerPaper.ID))
                     {
                         return NotFound();
                     }
@@ -112,10 +112,10 @@ namespace ISCAP.Controllers
                 }
                 return RedirectToAction("Index");
             }
-            return View(reviewerPapers);
+            return View(reviewerPaper);
         }
 
-        // GET: ReviewerPapers/Delete/5
+        // GET: ReviewerPaper/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -123,29 +123,29 @@ namespace ISCAP.Controllers
                 return NotFound();
             }
 
-            var reviewerPapers = await _context.ReviewerPapers.SingleOrDefaultAsync(m => m.ID == id);
-            if (reviewerPapers == null)
+            var reviewerPaper = await _context.ReviewerPaper.SingleOrDefaultAsync(m => m.ID == id);
+            if (reviewerPaper == null)
             {
                 return NotFound();
             }
 
-            return View(reviewerPapers);
+            return View(reviewerPaper);
         }
 
-        // POST: ReviewerPapers/Delete/5
+        // POST: ReviewerPaper/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var reviewerPapers = await _context.ReviewerPapers.SingleOrDefaultAsync(m => m.ID == id);
-            _context.ReviewerPapers.Remove(reviewerPapers);
+            var reviewerPaper = await _context.ReviewerPaper.SingleOrDefaultAsync(m => m.ID == id);
+            _context.ReviewerPaper.Remove(reviewerPaper);
             await _context.SaveChangesAsync();
             return RedirectToAction("Index");
         }
 
-        private bool ReviewerPapersExists(int id)
+        private bool ReviewerPaperExists(int id)
         {
-            return _context.ReviewerPapers.Any(e => e.ID == id);
+            return _context.ReviewerPaper.Any(e => e.ID == id);
         }
     }
 }
