@@ -27,24 +27,14 @@ namespace ISCAP.Migrations
                     b.Property<string>("Affiliation")
                         .IsRequired();
 
-                    b.Property<string>("Day")
-                        .IsRequired();
-
                     b.Property<string>("Email")
                         .IsRequired();
-
-                    b.Property<DateTime>("EndTime");
 
                     b.Property<string>("FirstName")
                         .IsRequired();
 
                     b.Property<string>("LastName")
                         .IsRequired();
-
-                    b.Property<string>("Location")
-                        .IsRequired();
-
-                    b.Property<DateTime>("StartTime");
 
                     b.Property<string>("SubjectArea")
                         .IsRequired();

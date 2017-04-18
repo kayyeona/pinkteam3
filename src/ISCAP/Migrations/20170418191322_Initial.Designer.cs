@@ -8,7 +8,7 @@ using ISCAP.Data;
 namespace ISCAP.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20170417203445_Initial")]
+    [Migration("20170418191322_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -28,24 +28,14 @@ namespace ISCAP.Migrations
                     b.Property<string>("Affiliation")
                         .IsRequired();
 
-                    b.Property<string>("Day")
-                        .IsRequired();
-
                     b.Property<string>("Email")
                         .IsRequired();
-
-                    b.Property<DateTime>("EndTime");
 
                     b.Property<string>("FirstName")
                         .IsRequired();
 
                     b.Property<string>("LastName")
                         .IsRequired();
-
-                    b.Property<string>("Location")
-                        .IsRequired();
-
-                    b.Property<DateTime>("StartTime");
 
                     b.Property<string>("SubjectArea")
                         .IsRequired();

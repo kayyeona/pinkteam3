@@ -94,6 +94,8 @@ namespace ISCAP.Controllers
         {
             db.Abstract.Add(a);
 
+            db.SaveChanges();
+
             return Content("Abstract Data Saved");
         }
 

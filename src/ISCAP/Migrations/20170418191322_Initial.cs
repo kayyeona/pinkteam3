@@ -17,13 +17,9 @@ namespace ISCAP.Migrations
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     Abstracts = table.Column<string>(nullable: false),
                     Affiliation = table.Column<string>(nullable: false),
-                    Day = table.Column<string>(nullable: false),
                     Email = table.Column<string>(nullable: false),
-                    EndTime = table.Column<DateTime>(nullable: false),
                     FirstName = table.Column<string>(nullable: false),
                     LastName = table.Column<string>(nullable: false),
-                    Location = table.Column<string>(nullable: false),
-                    StartTime = table.Column<DateTime>(nullable: false),
                     SubjectArea = table.Column<string>(nullable: false),
                     Title = table.Column<string>(nullable: false)
                 },

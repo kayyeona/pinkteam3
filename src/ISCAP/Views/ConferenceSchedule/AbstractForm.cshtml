@@ -1,22 +1,20 @@
-﻿model ISCAP.Models.Abstract
+﻿@model ISCAP.Models.Abstract
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title>Abstract</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Abstract</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-    <form action="/Abstract/SaveForm" method="post">
+    <form action="/ConferenceSchedule/AbstractSave/" method="post">
         <span class="label label-default">Title</span> <input type="text" name="Title" value="" /> <br />
         <span class="label label-default">First Name</span> <input type="text" name="FirstName" value="" /> <br />
         <span class="label label-default">Last Name</span> <input type="text" name="LastName" value="" /> <br />
         <span class="label label-default">Affiliation</span> <input type="text" name="Affiliation" value="" /> <br />
         <span class="label label-default">Subject Area</span> <input type="text" name="SubjectArea" value="" /> <br />
-        <span class="label label-default">Start Time</span> <input type="text" name="StartTime" value="" /> <br />
-        <span class="label label-default">End Time</span> <input type="text" name="EndTime" value="" /> <br />
-        <span class="label label-default">Day</span> <input type="text" name="Day" value="" /> <br />
-        <span class="label label-default">Location</span> <input type="text" name="Location" value="" /> <br />
+        <span class="label label-default">Email</span> <input type="text" name="Email" value="" /> <br />
+        <span class="label label-default">Abstracts</span> <input type="text" name="Abstracts" value="" /> <br />
         <button type="submit" value="submit" class="btn btn-primary">Submit</button>
     </form>
 </body>

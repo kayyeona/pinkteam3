@@ -28,20 +28,8 @@ namespace ISCAP.Models
         public string SubjectArea { get; set; }
 
         [Required]
-        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:hh:mm tt}")]
-        public DateTime StartTime { get; set; }
-
-        [Required]
-        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:hh:mm tt}")]
-        public DateTime EndTime { get; set; }
-
-        [Required]
-        public string Day { get; set; }
-
-        [Required]
-        public string Location { get; set; }
-        [Required]
         public string Email { get; set; }
+
         [Required]
         public string Abstracts { get; set; }
     }
