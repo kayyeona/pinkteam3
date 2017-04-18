@@ -7,8 +7,8 @@
 -debug:full
 -nostdlib
 -nologo
-"C:\Users\Aric\Desktop\ISCAP Proj\src\ISCAP\obj\Debug\netcoreapp1.0\dotnet-compile.assemblyinfo.cs"
--out:"C:\Users\Aric\Desktop\ISCAP Proj\src\ISCAP\bin\Debug\netcoreapp1.0\ISCAP.dll"
+"C:\Users\Aric\Desktop\ISCAP Proj\src\ISCAP\bin\src\ISCAP\obj\Debug\netcoreapp1.0\dotnet-compile.assemblyinfo.cs"
+-out:"C:\Users\Aric\Desktop\ISCAP Proj\src\ISCAP\bin\src\ISCAP\bin\Debug\netcoreapp1.0\ISCAP.dll"
 -r:"C:\Users\Aric\.nuget\packages\Microsoft.AspNetCore.Antiforgery\1.0.1\lib\netstandard1.3\Microsoft.AspNetCore.Antiforgery.dll"
 -r:"C:\Users\Aric\.nuget\packages\Microsoft.AspNetCore.Authentication\1.0.0\lib\netstandard1.3\Microsoft.AspNetCore.Authentication.dll"
 -r:"C:\Users\Aric\.nuget\packages\Microsoft.AspNetCore.Authentication.Cookies\1.0.0\lib\netstandard1.3\Microsoft.AspNetCore.Authentication.Cookies.dll"
@@ -219,8 +219,8 @@
 -r:"C:\Users\Aric\.nuget\packages\System.Threading.Timer\4.0.1\ref\netstandard1.2\System.Threading.Timer.dll"
 -r:"C:\Users\Aric\.nuget\packages\System.Xml.ReaderWriter\4.0.11\ref\netstandard1.3\System.Xml.ReaderWriter.dll"
 -r:"C:\Users\Aric\.nuget\packages\System.Xml.XDocument\4.0.11\ref\netstandard1.3\System.Xml.XDocument.dll"
--r:"C:\Users\Aric\Desktop\ISCAP Proj\src\ISCAPLibrary\bin\Debug\netstandard1.6\ISCAPLibrary.dll"
--resource:"C:\Users\Aric\Desktop\ISCAP Proj\src\ISCAP\obj\Debug\netcoreapp1.0\ISCAPdotnet-compile.deps.json",ISCAP.deps.json
+-r:"C:\Users\Aric\Desktop\ISCAP Proj\src\ISCAP\bin\src\ISCAPLibrary\bin\Debug\netstandard1.6\ISCAPLibrary.dll"
+-resource:"C:\Users\Aric\Desktop\ISCAP Proj\src\ISCAP\bin\src\ISCAP\obj\Debug\netcoreapp1.0\ISCAPdotnet-compile.deps.json",ISCAP.deps.json
 "C:\Users\Aric\Desktop\ISCAP Proj\src\ISCAP\Program.cs"
 "C:\Users\Aric\Desktop\ISCAP Proj\src\ISCAP\Startup.cs"
 "C:\Users\Aric\Desktop\ISCAP Proj\src\ISCAP\Controllers\AccountController.cs"

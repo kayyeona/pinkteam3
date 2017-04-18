@@ -1,7 +1,7 @@
-@model IEnumerable<ISCAP.Models.PaperDetails>
+@model IEnumerable<ISCAP.Models.ReviewerPapers>
 
 @{
-    ViewData["Title"] = "Paper Details";
+    ViewData["Title"] = "Index";
 }
 
 <h2>Index</h2>
@@ -13,19 +13,16 @@
     <thead>
         <tr>
             <th>
-                ID
+                @Html.DisplayNameFor(model => model.LastUpdate)
             </th>
             <th>
-                Paper Status
+                @Html.DisplayNameFor(model => model.PaperStatus)
             </th>
             <th>
-                Track ID
+                @Html.DisplayNameFor(model => model.PaperTitle)
             </th>
             <th>
-                Paper Title
-            </th>
-            <th>
-                Last Update
+                @Html.DisplayNameFor(model => model.TrackId)
             </th>
             <th></th>
         </tr>
@@ -34,19 +31,16 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.ID)
+                @Html.DisplayFor(modelItem => item.LastUpdate)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.PaperStatus)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.TrackId)
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => item.PaperTitle)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.LastUpdate)
+                @Html.DisplayFor(modelItem => item.TrackId)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |

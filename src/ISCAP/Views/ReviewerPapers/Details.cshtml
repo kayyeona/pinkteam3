@@ -1,4 +1,4 @@
-@model ISCAP.Models.PaperDetails
+@model ISCAP.Models.ReviewerPapers
 
 @{
     ViewData["Title"] = "Details";
@@ -7,38 +7,32 @@
 <h2>Details</h2>
 
 <div>
-    <h4>PaperDetails</h4>
+    <h4>ReviewerPapers</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            ID
+            @Html.DisplayNameFor(model => model.LastUpdate)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.ID)
+            @Html.DisplayFor(model => model.LastUpdate)
         </dd>
         <dt>
-            Paper Status
+            @Html.DisplayNameFor(model => model.PaperStatus)
         </dt>
         <dd>
             @Html.DisplayFor(model => model.PaperStatus)
         </dd>
         <dt>
-            Track ID
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.TrackId)
-        </dd>
-        <dt>
-            Paper Title
+            @Html.DisplayNameFor(model => model.PaperTitle)
         </dt>
         <dd>
             @Html.DisplayFor(model => model.PaperTitle)
         </dd>
         <dt>
-            Last Update
+            @Html.DisplayNameFor(model => model.TrackId)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.LastUpdate)
+            @Html.DisplayFor(model => model.TrackId)
         </dd>
     </dl>
 </div>

@@ -8,8 +8,8 @@
 -debug:full
 -nostdlib
 -nologo
-"C:\Users\Aric\Desktop\ISCAP Proj\src\ISCAPLibrary\obj\Debug\netstandard1.6\dotnet-compile.assemblyinfo.cs"
--out:"C:\Users\Aric\Desktop\ISCAP Proj\src\ISCAPLibrary\bin\Debug\netstandard1.6\ISCAPLibrary.dll"
+"C:\Users\Aric\Desktop\ISCAP Proj\src\ISCAP\bin\src\ISCAPLibrary\obj\Debug\netstandard1.6\dotnet-compile.assemblyinfo.cs"
+-out:"C:\Users\Aric\Desktop\ISCAP Proj\src\ISCAP\bin\src\ISCAPLibrary\bin\Debug\netstandard1.6\ISCAPLibrary.dll"
 -r:"C:\Users\Aric\.nuget\packages\Microsoft.Win32.Primitives\4.0.1\ref\netstandard1.3\Microsoft.Win32.Primitives.dll"
 -r:"C:\Users\Aric\.nuget\packages\System.AppContext\4.1.0\ref\netstandard1.6\System.AppContext.dll"
 -r:"C:\Users\Aric\.nuget\packages\System.Collections\4.0.11\ref\netstandard1.3\System.Collections.dll"

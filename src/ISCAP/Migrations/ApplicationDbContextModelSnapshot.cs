@@ -110,7 +110,7 @@ namespace ISCAP.Migrations
                     b.ToTable("Event");
                 });
 
-            modelBuilder.Entity("ISCAP.Models.PaperDetails", b =>
+            modelBuilder.Entity("ISCAP.Models.ReviewerPapers", b =>
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd();
@@ -125,7 +125,7 @@ namespace ISCAP.Migrations
 
                     b.HasKey("ID");
 
-                    b.ToTable("PaperDetails");
+                    b.ToTable("ReviewerPapers");
                 });
 
             modelBuilder.Entity("ISCAP.Models.Room", b =>

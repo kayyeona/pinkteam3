@@ -21,8 +21,6 @@ namespace ISCAP.Data
         public virtual DbSet<Room> Room { get; set; }
         public virtual DbSet<Slot> Slot { get; set; }
 
-        public DbSet<PaperDetails> PaperDetails { get; set; }
-
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
@@ -30,6 +28,9 @@ namespace ISCAP.Data
             // For example, you can rename the ASP.NET Identity table names and more.
             // Add your customizations after calling base.OnModelCreating(builder);
         }
+
+        public DbSet<ReviewerPapers> ReviewerPapers { get; set; }
+
 
     }
 }

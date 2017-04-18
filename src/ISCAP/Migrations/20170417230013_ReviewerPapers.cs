@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace ISCAP.Migrations
 {
-    public partial class PaperDetailsUpdate : Migration
+    public partial class ReviewerPapers : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

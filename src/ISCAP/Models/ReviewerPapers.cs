@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ISCAP.Models
 {
-    public class PaperDetails
+    public class ReviewerPapers
     {
         public int ID { get; set; }
 

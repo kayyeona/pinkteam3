@@ -8,8 +8,8 @@ using ISCAP.Data;
 namespace ISCAP.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20170414184904_PaperDetailsUpdate")]
-    partial class PaperDetailsUpdate
+    [Migration("20170417230013_ReviewerPapers")]
+    partial class ReviewerPapers
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -111,7 +111,7 @@ namespace ISCAP.Migrations
                     b.ToTable("Event");
                 });
 
-            modelBuilder.Entity("ISCAP.Models.PaperDetails", b =>
+            modelBuilder.Entity("ISCAP.Models.ReviewerPapers", b =>
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd();
@@ -126,7 +126,7 @@ namespace ISCAP.Migrations
 
                     b.HasKey("ID");
 
-                    b.ToTable("PaperDetails");
+                    b.ToTable("ReviewerPapers");
                 });
 
             modelBuilder.Entity("ISCAP.Models.Room", b =>
