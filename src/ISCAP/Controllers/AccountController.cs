@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
@@ -15,6 +13,7 @@ using ISCAP.Services;
 namespace ISCAP.Controllers
 {
     [Authorize]
+
     public class AccountController : Controller
     {
         private readonly UserManager<ApplicationUser> _userManager;
@@ -22,6 +21,13 @@ namespace ISCAP.Controllers
         private readonly IEmailSender _emailSender;
         private readonly ISmsSender _smsSender;
         private readonly ILogger _logger;
+
+        [Authorize]
+        public async Task<IActionResult> Logout()
+        {
+            await _signInManager.SignOutAsync();
+            return RedirectToAction("Index", "Home");
+        }
 
         public AccountController(
             UserManager<ApplicationUser> userManager,
@@ -37,17 +43,15 @@ namespace ISCAP.Controllers
             _logger = loggerFactory.CreateLogger<AccountController>();
         }
 
-        //
-        // GET: /Account/Login
+        // GET: /Account/Login      
         [HttpGet]
         [AllowAnonymous]
         public IActionResult Login(string returnUrl = null)
         {
-            ViewData["ReturnUrl"] = returnUrl;
+            ViewBag.returnUrl = returnUrl;
             return View();
         }
 
-        //
         // POST: /Account/Login
         [HttpPost]
         [AllowAnonymous]
@@ -80,12 +84,10 @@ namespace ISCAP.Controllers
                     return View(model);
                 }
             }
-
             // If we got this far, something failed, redisplay form
             return View(model);
         }
 
-        //
         // GET: /Account/Register
         [HttpGet]
         [AllowAnonymous]
@@ -95,7 +97,6 @@ namespace ISCAP.Controllers
             return View();
         }
 
-        //
         // POST: /Account/Register
         [HttpPost]
         [AllowAnonymous]
@@ -121,12 +122,10 @@ namespace ISCAP.Controllers
                 }
                 AddErrors(result);
             }
-
             // If we got this far, something failed, redisplay form
             return View(model);
         }
 
-        //
         // POST: /Account/LogOff
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -137,7 +136,11 @@ namespace ISCAP.Controllers
             return RedirectToAction(nameof(HomeController.Index), "Home");
         }
 
-        //
+        public IActionResult AccessDenied()
+        {
+            return View();
+        }
+
         // POST: /Account/ExternalLogin
         [HttpPost]
         [AllowAnonymous]
@@ -150,7 +153,6 @@ namespace ISCAP.Controllers
             return Challenge(properties, provider);
         }
 
-        //
         // GET: /Account/ExternalLoginCallback
         [HttpGet]
         [AllowAnonymous]
@@ -192,7 +194,6 @@ namespace ISCAP.Controllers
             }
         }
 
-        //
         // POST: /Account/ExternalLoginConfirmation
         [HttpPost]
         [AllowAnonymous]
@@ -221,7 +222,6 @@ namespace ISCAP.Controllers
                 }
                 AddErrors(result);
             }
-
             ViewData["ReturnUrl"] = returnUrl;
             return View(model);
         }
@@ -244,7 +244,6 @@ namespace ISCAP.Controllers
             return View(result.Succeeded ? "ConfirmEmail" : "Error");
         }
 
-        //
         // GET: /Account/ForgotPassword
         [HttpGet]
         [AllowAnonymous]
@@ -253,7 +252,6 @@ namespace ISCAP.Controllers
             return View();
         }
 
-        //
         // POST: /Account/ForgotPassword
         [HttpPost]
         [AllowAnonymous]
@@ -277,12 +275,10 @@ namespace ISCAP.Controllers
                 //   $"Please reset your password by clicking here: <a href='{callbackUrl}'>link</a>");
                 //return View("ForgotPasswordConfirmation");
             }
-
             // If we got this far, something failed, redisplay form
             return View(model);
         }
 
-        //
         // GET: /Account/ForgotPasswordConfirmation
         [HttpGet]
         [AllowAnonymous]
@@ -291,7 +287,6 @@ namespace ISCAP.Controllers
             return View();
         }
 
-        //
         // GET: /Account/ResetPassword
         [HttpGet]
         [AllowAnonymous]
@@ -300,7 +295,6 @@ namespace ISCAP.Controllers
             return code == null ? View("Error") : View();
         }
 
-        //
         // POST: /Account/ResetPassword
         [HttpPost]
         [AllowAnonymous]
@@ -326,7 +320,6 @@ namespace ISCAP.Controllers
             return View();
         }
 
-        //
         // GET: /Account/ResetPasswordConfirmation
         [HttpGet]
         [AllowAnonymous]
@@ -335,7 +328,6 @@ namespace ISCAP.Controllers
             return View();
         }
 
-        //
         // GET: /Account/SendCode
         [HttpGet]
         [AllowAnonymous]
@@ -351,7 +343,6 @@ namespace ISCAP.Controllers
             return View(new SendCodeViewModel { Providers = factorOptions, ReturnUrl = returnUrl, RememberMe = rememberMe });
         }
 
-        //
         // POST: /Account/SendCode
         [HttpPost]
         [AllowAnonymous]
@@ -389,7 +380,6 @@ namespace ISCAP.Controllers
             return RedirectToAction(nameof(VerifyCode), new { Provider = model.SelectedProvider, ReturnUrl = model.ReturnUrl, RememberMe = model.RememberMe });
         }
 
-        //
         // GET: /Account/VerifyCode
         [HttpGet]
         [AllowAnonymous]
@@ -404,7 +394,6 @@ namespace ISCAP.Controllers
             return View(new VerifyCodeViewModel { Provider = provider, ReturnUrl = returnUrl, RememberMe = rememberMe });
         }
 
-        //
         // POST: /Account/VerifyCode
         [HttpPost]
         [AllowAnonymous]
@@ -437,7 +426,6 @@ namespace ISCAP.Controllers
         }
 
         #region Helpers
-
         private void AddErrors(IdentityResult result)
         {
             foreach (var error in result.Errors)
@@ -458,11 +446,8 @@ namespace ISCAP.Controllers
                 return Redirect(returnUrl);
             }
             else
-            {
-                return RedirectToAction(nameof(HomeController.Index), "Home");
-            }
+            { return RedirectToAction(nameof(HomeController.Index), "Home"); }
         }
-
         #endregion
     }
 }
