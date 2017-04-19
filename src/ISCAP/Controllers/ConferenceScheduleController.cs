@@ -26,14 +26,14 @@ namespace ISCAP.Controllers
             WriteConferenceScheduleViewModel cs = new WriteConferenceScheduleViewModel();
             cs.Event = new Event();
             return View(cs);
-        }       
+        }
 
         [HttpPost, Route("Save")]
         public RedirectResult Save(WriteConferenceScheduleViewModel cs)
         {
             if (cs.Event.EventName == "Session")
             {
-                db.Room.Add(cs.Room);                
+                db.Room.Add(cs.Room);
             }
             db.Event.Add(cs.Event);
 
@@ -70,7 +70,7 @@ namespace ISCAP.Controllers
         [HttpGet, Route("PanelForm")]
         public ViewResult PanelForm()
         {
-                  
+
             return View();
         }
 
@@ -78,10 +78,23 @@ namespace ISCAP.Controllers
         public ContentResult PanelSave(Panel p)
         {
             db.Panel.Add(p);
-            db.SaveChanges();
-           
-            return Content("Panel Data Saved");
+
+            return Content("Abstract Data Saved");
         }
+        [HttpGet, Route("WorkShopForm")]
+        public ViewResult WorkShopForm()
+        {
+
+            return View();
+        }
+        [HttpPost, Route("WorkShopSave")]
+        public ContentResult WorkShopSave(Workshop w)
+        {
+            db.WorkShop.Add(w);
+
+            return Content("WorkShop Data Saved");
+        }
+
         [HttpGet, Route("AbstractForm")]
         public ViewResult AbstractForm()
         {
@@ -89,12 +102,10 @@ namespace ISCAP.Controllers
             return View();
         }
 
-       [HttpPost, Route("AbstractSave")]
+        [HttpPost, Route("AbstractSave")]
         public ContentResult AbstractSave(Abstract a)
         {
             db.Abstract.Add(a);
-
-            db.SaveChanges();
 
             return Content("Abstract Data Saved");
         }
