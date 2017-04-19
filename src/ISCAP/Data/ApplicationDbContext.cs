@@ -15,7 +15,7 @@ namespace ISCAP.Data
         {
         }
 
-        public virtual DbSet<Authors> Authors { get; set; }
+        public virtual DbSet<Author> Authors { get; set; }
 
         public virtual DbSet<Event> Event { get; set; }
         public virtual DbSet<Room> Room { get; set; }

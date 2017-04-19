@@ -11,21 +11,24 @@ namespace ISCAP.Models
     {
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Required]
-        public string title { get; set; }
+        public string workShoptitle { get; set; }
         [Required]
-        public string name { get; set; }
+        public string workShopname { get; set; }
         [Required]
-        public string affiliation { get; set; }
+        public string workShopAffiliation { get; set; }
         [Required]
         [EmailAddress]
         public string emailAddress { get; set; }
         [Required]
         [MaxLength(300)]
-        public string overview { get; set; }
+        public string workShopOverview { get; set; }
         [Required]
         [MaxLength(50)]
         public string targAud { get; set; }
         [Required]
         public string timeRequested { get; set; }
+
+        [Required]
+        public string workShopEquipmentSetupPart { get; set; }
     }
 }
