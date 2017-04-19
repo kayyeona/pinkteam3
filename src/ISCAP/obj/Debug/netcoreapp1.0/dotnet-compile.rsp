@@ -239,11 +239,12 @@ C:\Users\cshoemake\Desktop\iscap\src\ISCAP\Migrations\20170418191322_Initial.Des
 C:\Users\cshoemake\Desktop\iscap\src\ISCAP\Migrations\ApplicationDbContextModelSnapshot.cs
 C:\Users\cshoemake\Desktop\iscap\src\ISCAP\Models\Abstract.cs
 C:\Users\cshoemake\Desktop\iscap\src\ISCAP\Models\ApplicationUser.cs
-C:\Users\cshoemake\Desktop\iscap\src\ISCAP\Models\Authors.cs
+C:\Users\cshoemake\Desktop\iscap\src\ISCAP\Models\Author.cs
 C:\Users\cshoemake\Desktop\iscap\src\ISCAP\Models\Event.cs
 C:\Users\cshoemake\Desktop\iscap\src\ISCAP\Models\Panel.cs
 C:\Users\cshoemake\Desktop\iscap\src\ISCAP\Models\Room.cs
 C:\Users\cshoemake\Desktop\iscap\src\ISCAP\Models\Slot.cs
+C:\Users\cshoemake\Desktop\iscap\src\ISCAP\Models\WorkShopForm.cs
 C:\Users\cshoemake\Desktop\iscap\src\ISCAP\Models\AccountViewModels\ExternalLoginConfirmationViewModel.cs
 C:\Users\cshoemake\Desktop\iscap\src\ISCAP\Models\AccountViewModels\ForgotPasswordViewModel.cs
 C:\Users\cshoemake\Desktop\iscap\src\ISCAP\Models\AccountViewModels\LoginViewModel.cs
