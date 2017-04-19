@@ -67,6 +67,12 @@ namespace ISCAP.Controllers
             return View(cs);
         }
 
+        [HttpGet, Route("Calendar")]
+        public ViewResult Calendar()
+        {
+
+            return View();
+        }
         // For Filtering by days..not done yet...old version
         //[HttpGet, Route("Schedule/{day}")]
         //public ViewResult Schedule(string day)
