@@ -19,11 +19,6 @@ namespace ISCAP.Controllers
 
         public IActionResult Index()
         {
-            List<Slot> slotList = new List<Slot>();
-
-            slotList = (from item in _context.Slot select item).ToList();
-
-            slotList.Insert(0, new Slot { slotId = 0, title = "Select" });
 
             return View();
         }
@@ -31,9 +26,26 @@ namespace ISCAP.Controllers
         [HttpGet, Route("Form")]
         public IActionResult SlotContainer()
         {
-            Slot sl = new Slot();
-
             return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> SaveSlot([Bind("slotId,conference,title,authors,slotTime")] Slot slot)
+        {
+            /*Slot sl = new Slot();
+            sl.title = HttpContext.Request.Form["txtTitle"].ToString();
+            sl.conference = HttpContext.Request.Form["txtConference"].ToString();
+            sl.authors = HttpContext.Request.Form["txtAuthors"].ToString();
+            sl.slotTime = Convert.ToInt32(HttpContext.Request.Form["txtSlotTime"]);*/
+
+            if (ModelState.IsValid)
+            {
+                _context.Add(slot);
+                await _context.SaveChangesAsync();
+                return RedirectToAction("Index");
+            }
+            return View(slot);
         }
     }
 }

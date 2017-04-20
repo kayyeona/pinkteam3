@@ -1,22 +1,21 @@
-@model ISCAP.Models.Slot
+﻿@model ISCAP.Models.Slot
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Slots";
 }
 
-<h2>Edit</h2>
+<h2>Create Slot</h2>
 
-<form asp-action="Edit">
+<form asp-action="Index">
     <div class="form-horizontal">
-        <h4>Slot</h4>
+        <h4>Author</h4>
         <hr />
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-    <input type="hidden" asp-for="slotId" />
         <div class="form-group">
-            <label asp-for="authors" class="col-md-2 control-label"></label>
+            <label asp-for="title" class="col-md-2 control-label"></label>
             <div class="col-md-10">
-                <input asp-for="authors" class="form-control" />
-                <span asp-validation-for="authors" class="text-danger" />
+                <input asp-for="title" class="form-control" />
+                <span asp-validation-for="title" class="text-danger" />
             </div>
         </div>
         <div class="form-group">
@@ -27,30 +26,26 @@
             </div>
         </div>
         <div class="form-group">
-            <label asp-for="roomId" class="control-label col-md-2"></label>
+            <label asp-for="authors" class="col-md-2 control-label"></label>
             <div class="col-md-10">
-                <select asp-for="roomId" class="form-control" asp-items="ViewBag.roomId"></select>
-                <span asp-validation-for="roomId" class="text-danger" />
+                <input asp-for="authors" class="form-control" />
+                <span asp-validation-for="authors" class="text-danger" />
             </div>
         </div>
         <div class="form-group">
-            <label asp-for="title" class="col-md-2 control-label"></label>
+            <label asp-for="slotTime" class="col-md-2 control-label"></label>
             <div class="col-md-10">
-                <input asp-for="title" class="form-control" />
-                <span asp-validation-for="title" class="text-danger" />
+                <input asp-for="slotTime" class="form-control" />
+                <span asp-validation-for="slotTime" class="text-danger" />
             </div>
         </div>
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
+                <input type="submit" value="Add" class="btn btn-default" />
             </div>
         </div>
     </div>
 </form>
-
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

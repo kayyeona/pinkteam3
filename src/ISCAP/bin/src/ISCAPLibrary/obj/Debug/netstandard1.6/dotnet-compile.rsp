@@ -1,5 +1,5 @@
---temp-output:C:\Users\Angel\Source\Repos\iscap4\src\ISCAPLibrary\obj\Debug\netstandard1.6\
---out:C:\Users\Angel\Source\Repos\iscap4\src\ISCAPLibrary\bin\Debug\netstandard1.6\ISCAPLibrary.dll
+--temp-output:C:\Users\Angel\Source\Repos\iscap4\src\ISCAP\bin\src\ISCAPLibrary\obj\Debug\netstandard1.6\
+--out:C:\Users\Angel\Source\Repos\iscap4\src\ISCAP\bin\src\ISCAPLibrary\bin\Debug\netstandard1.6\ISCAPLibrary.dll
 --define:DEBUG
 --define:TRACE
 --define:NETSTANDARD1_6

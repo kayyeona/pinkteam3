@@ -1,5 +1,5 @@
---temp-output:C:\Users\Angel\Source\Repos\iscap4\src\ISCAP\obj\Debug\netcoreapp1.0\
---out:C:\Users\Angel\Source\Repos\iscap4\src\ISCAP\bin\Debug\netcoreapp1.0\ISCAP.dll
+--temp-output:C:\Users\Angel\Source\Repos\iscap4\src\ISCAP\bin\src\ISCAP\obj\Debug\netcoreapp1.0\
+--out:C:\Users\Angel\Source\Repos\iscap4\src\ISCAP\bin\src\ISCAP\bin\Debug\netcoreapp1.0\ISCAP.dll
 --define:DEBUG
 --define:TRACE
 --define:NETCOREAPP1_0
@@ -223,8 +223,8 @@
 --reference:C:\Users\Angel\.nuget\packages\System.Threading.Timer\4.0.1\ref\netstandard1.2\System.Threading.Timer.dll
 --reference:C:\Users\Angel\.nuget\packages\System.Xml.ReaderWriter\4.0.11\ref\netstandard1.3\System.Xml.ReaderWriter.dll
 --reference:C:\Users\Angel\.nuget\packages\System.Xml.XDocument\4.0.11\ref\netstandard1.3\System.Xml.XDocument.dll
---reference:C:\Users\Angel\Source\Repos\iscap4\src\ISCAPLibrary\bin\Debug\netstandard1.6\ISCAPLibrary.dll
---resource:"C:\Users\Angel\Source\Repos\iscap4\src\ISCAP\obj\Debug\netcoreapp1.0\ISCAPdotnet-compile.deps.json",ISCAP.deps.json
+--reference:C:\Users\Angel\Source\Repos\iscap4\src\ISCAP\bin\src\ISCAPLibrary\bin\Debug\netstandard1.6\ISCAPLibrary.dll
+--resource:"C:\Users\Angel\Source\Repos\iscap4\src\ISCAP\bin\src\ISCAP\obj\Debug\netcoreapp1.0\ISCAPdotnet-compile.deps.json",ISCAP.deps.json
 C:\Users\Angel\Source\Repos\iscap4\src\ISCAP\Program.cs
 C:\Users\Angel\Source\Repos\iscap4\src\ISCAP\Startup.cs
 C:\Users\Angel\Source\Repos\iscap4\src\ISCAP\Controllers\AccountController.cs
