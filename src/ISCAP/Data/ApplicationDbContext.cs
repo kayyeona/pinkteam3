@@ -15,11 +15,15 @@ namespace ISCAP.Data
         {
         }
 
-        public virtual DbSet<Authors> Authors { get; set; }
+        public virtual DbSet<Author> Authors { get; set; }
 
         public virtual DbSet<Event> Event { get; set; }
         public virtual DbSet<Room> Room { get; set; }
         public virtual DbSet<Slot> Slot { get; set; }
+        public virtual DbSet<Panel> Panel { get; set; }
+        public virtual DbSet<Abstract> Abstract { get; set; }
+        public virtual DbSet<Workshop> WorkShop { get; set; }
+
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
