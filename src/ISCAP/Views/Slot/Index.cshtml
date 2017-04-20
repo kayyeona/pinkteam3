@@ -1,0 +1,47 @@
+@model IEnumerable<ISCAP.Models.Slot>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.authors)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.conference)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.title)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.authors)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.conference)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.title)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.slotId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.slotId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.slotId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
