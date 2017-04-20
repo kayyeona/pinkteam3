@@ -26,14 +26,14 @@ namespace ISCAP.Controllers
             WriteConferenceScheduleViewModel cs = new WriteConferenceScheduleViewModel();
             cs.Event = new Event();
             return View(cs);
-        }       
+        }
 
         [HttpPost, Route("Save")]
         public RedirectResult Save(WriteConferenceScheduleViewModel cs)
         {
             if (cs.Event.EventName == "Session")
             {
-                db.Room.Add(cs.Room);                
+                db.Room.Add(cs.Room);
             }
             db.Event.Add(cs.Event);
 
@@ -66,6 +66,50 @@ namespace ISCAP.Controllers
 
             return View(cs);
         }
+
+        [HttpGet, Route("PanelForm")]
+        public ViewResult PanelForm()
+        {
+
+            return View();
+        }
+
+        [HttpPost, Route("PanelSave")]
+        public ContentResult PanelSave(Panel p)
+        {
+            db.Panel.Add(p);
+
+            return Content("Abstract Data Saved");
+        }
+        [HttpGet, Route("WorkShopForm")]
+        public ViewResult WorkShopForm()
+        {
+
+            return View();
+        }
+        [HttpPost, Route("WorkShopSave")]
+        public ContentResult WorkShopSave(Workshop w)
+        {
+            db.WorkShop.Add(w);
+
+            return Content("WorkShop Data Saved");
+        }
+
+        [HttpGet, Route("AbstractForm")]
+        public ViewResult AbstractForm()
+        {
+
+            return View();
+        }
+
+        [HttpPost, Route("AbstractSave")]
+        public ContentResult AbstractSave(Abstract a)
+        {
+            db.Abstract.Add(a);
+
+            return Content("Abstract Data Saved");
+        }
+
 
         // For Filtering by days..not done yet...old version
         //[HttpGet, Route("Schedule/{day}")]
