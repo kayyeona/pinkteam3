@@ -15,7 +15,9 @@ namespace ISCAP.Models
         [Required]
         public string roomName { get; set; }
         [Required]
-        public string chair { get; set; }        
+        public string chair { get; set; }
+        [Required]
+        public int capacity { get; set; }   
         [ForeignKey("roomId")]
         public List<Slot> Slot { get; set; }
         [Required]

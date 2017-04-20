@@ -230,10 +230,9 @@ C:\Users\Angel\Source\Repos\iscapSprint3\src\ISCAP\Startup.cs
 C:\Users\Angel\Source\Repos\iscapSprint3\src\ISCAP\Controllers\AccountController.cs
 C:\Users\Angel\Source\Repos\iscapSprint3\src\ISCAP\Controllers\AuthorController.cs
 C:\Users\Angel\Source\Repos\iscapSprint3\src\ISCAP\Controllers\ConferenceScheduleController.cs
-C:\Users\Angel\Source\Repos\iscapSprint3\src\ISCAP\Controllers\EventController.cs
 C:\Users\Angel\Source\Repos\iscapSprint3\src\ISCAP\Controllers\HomeController.cs
 C:\Users\Angel\Source\Repos\iscapSprint3\src\ISCAP\Controllers\ManageController.cs
-C:\Users\Angel\Source\Repos\iscapSprint3\src\ISCAP\Controllers\RoomController.cs
+C:\Users\Angel\Source\Repos\iscapSprint3\src\ISCAP\Controllers\SlotContainerController.cs
 C:\Users\Angel\Source\Repos\iscapSprint3\src\ISCAP\Data\ApplicationDbContext.cs
 C:\Users\Angel\Source\Repos\iscapSprint3\src\ISCAP\Data\DbInitializer.cs
 C:\Users\Angel\Source\Repos\iscapSprint3\src\ISCAP\Models\ApplicationUser.cs
