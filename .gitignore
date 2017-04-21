@@ -243,4 +243,6 @@ ModelManifest.xml
 
 
 #Migrations - by Jacqueline
-src/ISCAP/Migrations
+src/ISCAP/Migrations/
+#bin/Debug folder - by Jacqueline
+src/ISCAP/bin/Debug/
