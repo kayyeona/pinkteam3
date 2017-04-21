@@ -1,0 +1,283 @@
+﻿/* Globals */
+body {
+  position: relative;
+  padding-top: 3.5rem;
+}
+
+/* Custom */
+.main-section {
+	font-weight: 300;
+	color: #666;
+	border-bottom: 1px solid rgba(0,0,0,.2);
+	padding-top: 5rem;
+	margin-bottom: 1rem;
+}
+
+/* Navbar */
+.navbar-title {
+	display: inline;
+	font-size: 1.3rem;
+}
+
+/* Contact biography */
+.contact-name {
+ font-size: 1.6rem;	
+}
+.contact-title {
+ font-size: 1.2rem;	
+}
+.biography {
+	text-align: justify;
+	font-size: 1rem;
+}
+.bio-image {
+	padding-right: 1rem;
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+    .biography {
+        font-size: 0.9rem;
+    }
+}
+
+/* Schedude my-schedule */
+.my-schedule .day {
+	font-weight: 900;
+	text-align: center;
+	text-transform: uppercase;
+}
+.my-schedule .hour {
+	font-weight: 900;
+	text-align: right;
+	font-size: 0.9rem;
+}
+.my-schedule .half {
+	font-weight: 400;
+	text-align: right;
+	font-size: 0.9rem;
+	color: #888;
+}
+.my-schedule .item {
+	font-size: 0.9rem;
+	line-height: 1.1rem;
+	border-radius: 5px;	
+	padding: 0.5rem 0;
+	text-align: center;
+	margin: 0.5rem 5rem;
+	color: #666;
+}
+.my-schedule .item b {
+	font-size: 1.0rem;
+	color: #373a3c;
+}
+.my-schedule .item i {
+	font-style: normal;
+}
+.my-schedule .item u {
+	text-decoration: none;
+	font-weight: 700;
+	color: #373a3c;
+}
+.my-schedule .free, .my-schedule .hour, .my-schedule .half {
+	display: none;
+}
+@media (min-width: 576px) {
+	.my-schedule .item {
+		font-size: 0.7rem;
+		margin: 0;
+	}
+	.my-schedule .item b {
+		font-size: 0.8rem;
+	}
+	.my-schedule .free, .my-schedule .hour, .my-schedule .half {
+		display: block;
+	}
+}
+@media (min-width: 768px) {
+	.my-schedule .item {
+		font-size: 0.8rem;
+	}
+	.my-schedule .item b {
+		font-size: 0.9rem;
+	}
+}
+@media (min-width: 992px) {
+	.my-schedule .item {
+		font-size: 0.9rem;
+	}
+	.my-schedule .item b {
+		font-size: 1.1rem;
+	}
+}
+.my-schedule .course-1 {
+  background-color: #cdf;
+  height: 6rem;
+}
+.my-schedule .course-2 {
+  background-color: #dcf;
+  height: 6rem;
+}
+.my-schedule .course-3 {
+  background-color: #ccf;
+  height: 12rem;
+}
+.my-schedule .office {
+  background-color: #ffc;
+}
+.my-schedule .lunch {
+  background-color: #ddd;
+}
+.my-schedule .free-period {
+  background-color: #bbb;
+}
+.my-schedule .meeting1 {
+  background-color: #cfd;
+}
+.my-schedule .meeting2 {
+  background-color: #fcc;
+}
+.my-schedule .meeting3 {
+  background-color: #dfc;
+}
+
+
+/* Course color-sort */
+#colorsort th {
+	background-color: #eee;
+	color: #000000;
+}
+#colorsort th.colorsort-active {
+	background-color: #373a3c;
+	color: #fff;
+}
+#colorsort thead th b {
+	display: none;
+}
+#colorsort thead th abbr {
+	display: inline;
+}
+@media (min-width: 768px) {
+	#colorsort thead th b {
+		display: inline;
+	}
+	#colorsort thead th abbr {
+		display: none;
+	}
+}
+
+
+
+/* Scholarship pub-list */
+.pub-list li u {
+	display: block;
+	text-decoration: none;
+}
+.pub-list li p {
+	margin-left: 0;
+}
+
+@media (min-width: 768px) {
+	.pub-list li u {
+		float: left;
+	}
+	.pub-list li p {
+		margin-left: 5rem;
+	}
+}
+
+/* Vita */
+.vita-updated {
+	font-weight: 300;
+	font-size: 0.8rem;
+}
+.vita-name {
+	font-weight: 300;
+}
+.vita-title {
+	font-weight: 400;
+	font-size: 1.2rem;
+	color: #666;
+}
+.vita-section {
+	font-size: 1.1rem;
+}
+.vita-button {
+	float: right;
+	font-size: 1.2rem;
+}
+
+/* Footer */
+footer {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  margin-top: 5rem;
+  color: #888;
+  text-align: center;
+  background-image: linear-gradient(to top, #373a3c 0%, #121314 100%);
+  background-color: #202830;
+}
+footer a {
+	color: #7595bc
+}
+footer a:hover {
+	color: #5c87bc
+}
+.footer-links {
+  padding-left: 0;
+  margin-bottom: 20px;
+}
+.footer-links li {
+  display: inline-block;
+}
+.footer-links li + li {
+  margin-left: 15px;
+}
+
+/* Carousel */
+.carousel h2 {
+	font-size: 1.4rem;
+}
+
+.carousel, .carousel-item {
+  height: 300px;
+}
+.carousel .carousel-item .carousel-caption {
+	bottom: auto;
+	top: 30px;
+	left: 15%;
+	right: auto;
+	display: inline;
+	padding: 10px 20px;
+	background-color: rgba(0,0,0,.3);
+	border-radius: 5px;
+}
+#main-carousel .carousel-item .bottom-caption {
+	top: auto;
+	bottom: 50px;
+}
+
+@media (min-width: 576px) {
+	.carousel, .carousel-item {
+		height: 400px;
+	}
+}
+@media (min-width: 768px) {
+	.carousel, .carousel-item {
+		height: 500px;
+	}
+}
+@media (min-width: 992px) {
+	.carousel, .carousel-item {
+		height: 600px;
+	}
+}
+.carousel .item1 {
+	background: #000 url('../img/background1.jpg') no-repeat center center;
+}
+.carousel .item2 {
+	background: #000 url('../img/background2.jpg') no-repeat center center;
+}
+.carousel .item3 {
+	background: #000 url('../img/background3.jpg') no-repeat center center;
+}
+
+

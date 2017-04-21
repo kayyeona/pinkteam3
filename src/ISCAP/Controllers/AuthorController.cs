@@ -29,7 +29,7 @@ namespace ISCAP.Controllers
 
         [HttpPost]
         [Route("SaveForm")]
-        public ContentResult SaveForm(Authors form)
+        public ContentResult SaveForm(Author form)
         {
             db.Authors.Add(form);
 
