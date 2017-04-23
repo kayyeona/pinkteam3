@@ -26,6 +26,7 @@ namespace ISCAP.Models
         [Display(Name = "Slot Time")]
         public int slotTime { get; set; }
         public int? roomId { get; set; }
+        public int? slotBlockId { get; set; }
 
     }
 }

@@ -144,6 +144,8 @@ namespace ISCAP.Migrations
 
                     b.Property<int?>("roomId");
 
+                    b.Property<int?>("slotBlockId");
+
                     b.Property<int>("slotTime");
 
                     b.Property<string>("title")
@@ -154,6 +156,21 @@ namespace ISCAP.Migrations
                     b.HasIndex("roomId");
 
                     b.ToTable("Slot");
+                });
+
+            modelBuilder.Entity("ISCAP.Models.SlotBlock", b =>
+                {
+                    b.Property<int>("slotBlockId")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<int>("slotId");
+
+                    b.Property<string>("title")
+                        .IsRequired();
+
+                    b.HasKey("slotBlockId");
+
+                    b.ToTable("SlotBlock");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.EntityFrameworkCore.IdentityRole", b =>
