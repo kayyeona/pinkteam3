@@ -13,6 +13,7 @@ namespace ISCAP.Models
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int roomId { get; set; }
         [Required]
+        [Display(Name = "Name")]
         public string roomName { get; set; }
         [Required]
         public string chair { get; set; }

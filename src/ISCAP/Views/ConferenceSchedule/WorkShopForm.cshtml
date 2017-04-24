@@ -1,0 +1,37 @@
+﻿@model ISCAP.Models.Workshop
+
+<html xlms="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Panels</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+    <form action="/ConferenceSchedule/WorkShopSave/" method="post">
+        <span class="label label-default">Work Shop Title</span> <input type="text" name="workShopTitle" value="" id="workShopTitle" /> <br /><br />
+        <span class="label label-default">Presenter(s) Name</span> <input type="text" name="presenterName" value="" id="presenterName" /> <br /><br />
+        <span class="label label-default">Presenter(s) Affiliation</span> <input type="text" name="presenterAffil" value="" id="presenterAffil" /> <br /><br />
+        <span class="label label-default">Presenter(s) Email Address</span> <input type="text" name="presenterEmail" value="" id="presenterEmail" /> <br /><br />
+        <span class="label label-default">Work Shop Overview</span> <input type="text" name="workShopOverview" value="" id="workShopOverview" /> <br /><br />
+        <span class="label label-default">Target Audience</span> <br /> <textarea asp-for="targAud" rows="5" cols="40"></textarea> <br /><br />
+        <span class="label label-default">Time Requested</span>
+        <select name="Slot.timeReq">
+            <option value="25">25 Minutes</option>
+            <option value="50">50 Minutes</option>
+            <option value="75">75 Minutes</option>
+            <option value="90">90 Minutes</option>
+            <option value="120">120 Minutes</option>
+        </select> <br />
+        <span class="label label-default">Work Shop Equipment</span> <input type="text" name="workShopEquipmentSetupPart" value="" id="workShopEquipmentSetupPart" /> <br /><br />
+        <div id="hook"></div>
+        @*<button type="button" onclick="addWorkShop()" class="workshop" disabled>Add Work Shop</button>*@
+        <input type="text" name="" value="" id="workshopform" style="display: none;" /> <br />
+        <button type="submit" value="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+</body>
+</html>
+
+
+

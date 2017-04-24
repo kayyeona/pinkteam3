@@ -35,7 +35,28 @@
                     <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
                     <li><a asp-area="" asp-controller="ConferenceSchedule" asp-action="Form">Schedule</a></li>
                     <li><a asp-area="" asp-controller="Author" asp-action="Form">Add Authors</a></li>
+                    @if (User.IsInRole("Author"))
+                    {
+                        <li><a asp-area="" asp-controller="Author" asp-action="Index">Author</a></li>
+                    }
+
+                    @if (User.IsInRole("Reviewer"))
+                    {
+                        <li><a asp-area="" asp-controller="Editor" asp-action="Index">Reviewer</a></li>
+                    }
+
+                    @if (User.IsInRole("Editor"))
+                    {
+                        <li><a asp-area="" asp-controller="Editor" asp-action="Index">Editor</a></li>
+                    }
+
+                    @if (User.IsInRole("Administrator"))
+                    {
+                        <li><a asp-area="" asp-controller="Admin" asp-action="Index">Admin</a></li>
+
+                    }
                     <li><a asp-area="" asp-controller="SlotContainer" asp-action="Index">Add Slot</a></li>
+                    <li><a asp-area="" asp-controller="RoomsManagement" asp-action="Index">Room</a></li>
                     <li><a asp-area="" asp-controller="SlotBlock" asp-action="Index">Slot Block</a></li>
 
                 </ul>
@@ -44,6 +65,11 @@
         </div>
     </div>
     <div class="container body-content">
+        
+        <br />
+        <br />
+        <br />
+        <br />
         @RenderBody()
         <hr />
         <footer>

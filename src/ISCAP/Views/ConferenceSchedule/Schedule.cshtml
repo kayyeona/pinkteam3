@@ -37,9 +37,12 @@
             <tr>
                 <td>@i.roomName</td>
                 <td>@i.chair</td>
-                @foreach (var x in i.Slot)
+                @if (i.Slot != null)
                 {
-                    <td>@x.title <br /> @x.conference <br /> @x.authors</td>
+                    @foreach (var x in i.Slot)
+                    {
+                        <td>@x.title <br /> @x.conference <br /> @x.authors</td>
+                    }
                 }
             </tr>
         }
