@@ -11,6 +11,8 @@ namespace ISCAP.Models
     {
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Required]
+        public int workShopId { get; set; }
+        [Required]
         public string workShoptitle { get; set; }
         [Required]
         public string workShopname { get; set; }

@@ -45,8 +45,8 @@ namespace ISCAP
                // options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
 
-            //services.AddDbContext<ApplicationDbContext>(options =>
-            //    options.UseSqlServer(Configuration.GetConnectionString("MyAzure")));
+            services.AddDbContext<ApplicationDbContext>(options =>
+               options.UseSqlServer(Configuration.GetConnectionString("MyAzure")));
 
             services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>()
