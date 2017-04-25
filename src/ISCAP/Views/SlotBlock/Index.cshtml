@@ -1,0 +1,34 @@
+﻿@model ISCAP.Models.SlotBlock
+
+@{
+        <form asp-controller="SlotBlock" asp-action="Index" method="post" class="form-horizontal" role="form">
+            <div class="form-group">
+                <div class="role">
+                    <div asp-validation-summary="ModelOnly"></div>
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+                        <label asp-for="title" class="control-label-label"></label>
+                        <select asp-for="slotId"
+                                class="form-control"
+                                asp-items="@(new SelectList(ViewBag.ListOfSlots,"slotId", "title"))"></select>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+                        <input id="Submit" type="submit" value="submit" />
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+                        @if (ViewBag.SelectedValue != null)
+                        {
+                            <text>Selected Slock Block ID: </text> @ViewBag.SelectedValue;
+                        }
+                    </div>
+                </div>
+            </div>  
+        </form>
+}

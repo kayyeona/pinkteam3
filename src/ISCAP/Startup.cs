@@ -46,7 +46,7 @@ namespace ISCAP
 
 
             services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("MyAzure")));
+               options.UseSqlServer(Configuration.GetConnectionString("MyAzure")));
 
             services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>()

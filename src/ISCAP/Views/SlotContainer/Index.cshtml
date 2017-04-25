@@ -1,51 +1,135 @@
 ﻿@model ISCAP.Models.Slot
 
 @{
-    ViewData["Title"] = "Slots";
+    ViewBag.Title = "Slots";
 }
 
-<h2>Create Slot</h2>
-
-<form asp-action="Index">
-    <div class="form-horizontal">
-        <h4>Author</h4>
-        <hr />
-        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-        <div class="form-group">
-            <label asp-for="title" class="col-md-2 control-label"></label>
-            <div class="col-md-10">
-                <input asp-for="title" class="form-control" />
-                <span asp-validation-for="title" class="text-danger" />
-            </div>
-        </div>
-        <div class="form-group">
-            <label asp-for="conference" class="col-md-2 control-label"></label>
-            <div class="col-md-10">
-                <input asp-for="conference" class="form-control" />
-                <span asp-validation-for="conference" class="text-danger" />
-            </div>
-        </div>
-        <div class="form-group">
-            <label asp-for="authors" class="col-md-2 control-label"></label>
-            <div class="col-md-10">
-                <input asp-for="authors" class="form-control" />
-                <span asp-validation-for="authors" class="text-danger" />
-            </div>
-        </div>
-        <div class="form-group">
-            <label asp-for="slotTime" class="col-md-2 control-label"></label>
-            <div class="col-md-10">
-                <input asp-for="slotTime" class="form-control" />
-                <span asp-validation-for="slotTime" class="text-danger" />
-            </div>
-        </div>
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Add" class="btn btn-default" />
-            </div>
-        </div>
-    </div>
+<h1>Slots</h1>
+<form asp-controller="SlotContainer" asp-action="GetDetails" method="post">
+    <table>
+        <tr>
+            <td>Title :</td>
+            <td><input name="txtTitle" type="text" /></td>
+        </tr>
+        <tr>
+            <td>Conference :</td>
+            <td><input name="txtConference" type="text" /></td>
+        </tr>
+        <tr>
+            <td>Author :</td>
+            <td><input name="txtAuthors" type="text" /></td>
+        </tr>
+        <tr>
+            <td>Slot Time :</td>
+            <td><input name="txtSlot Time" type="text" /></td>
+        </tr>
+        <tr>
+            <td colspan="2"><input id="Submit1" type="submit" value="submit" /></td>
+        </tr>
+    </table>
 </form>
+<br /><br />
+
+<h2 style="font-style:italic; color:deeppink">@ViewBag.Result</h2>
+
+@{
+    /*<form asp-controller="SlotContainer" asp-action="Index" method="post" class="form-horizontal" role="form">
+        <div class="form-group">
+            <div class="role">
+                <div asp-validation-summary="ModelOnly"></div>
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+                    <label asp-for="panelId" class="control-label-label"></label>
+                    <select asp-for="panelId"
+                            class="form-control"
+                            asp-items="@(new SelectList(ViewBag.ListOfPanels,"panelId", "panelTitle"))"></select>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+                    <input id="Submit" type="submit" value="submit" />
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+                    @if (ViewBag.SelectedValue != null)
+                    {
+                        <text>Selected Slot ID: </text> @ViewBag.SelectedValue;
+                    }
+                </div>
+            </div>
+        </div>
+    </form>*/
+}
+
+@{
+    /*<form asp-controller="SlotContainer" asp-action="Index" method="post" class="form-horizontal" role="form">
+        <div class="form-group">
+            <div class="role">
+                <div asp-validation-summary="ModelOnly"></div>
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+                    <label asp-for="workShopId" class="control-label-label"></label>
+                    <select asp-for="workShopId"
+                            class="form-control"
+                            asp-items="@(new SelectList(ViewBag.ListOfWorkShops,"workShopId", "workShopTitle"))"></select>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+                    <input id="Submit" type="submit" value="submit" />
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+                    @if (ViewBag.SelectedValue != null)
+                    {
+                        <text>Selected Slot ID: </text> @ViewBag.SelectedValue;
+                    }
+                </div>
+            </div>
+        </div>
+    </form>*/
+}
+
+@{
+    /*<form asp-controller="SlotContainer" asp-action="Index" method="post" class="form-horizontal" role="form">
+        <div class="form-group">
+            <div class="role">
+                <div asp-validation-summary="ModelOnly"></div>
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+                    <label asp-for="eventID" class="control-label-label"></label>
+                    <select asp-for="eventID"
+                            class="form-control"
+                            asp-items="@(new SelectList(ViewBag.ListOfEvents,"eventID", "EventName"))"></select>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+                    <input id="Submit" type="submit" value="submit" />
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+                    @if (ViewBag.SelectedValue != null)
+                    {
+                        <text>Selected Slot ID: </text> @ViewBag.SelectedValue;
+                    }
+                </div>
+            </div>
+        </div>
+    </form>*/
+}
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
